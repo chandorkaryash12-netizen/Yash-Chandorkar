@@ -24,7 +24,7 @@
             <span class="save">Save <%= Math.round((1 - course.price / course.originalPrice) * 100) %>%</span>
           <% } %>
         </div>
-        <% if (course.schedule) { %><p class="small"><strong>Schedule:</strong> <%= course.schedule %></p><% } %>
+        <% if (course.schedule) { %><p class="small"><strong>Access:</strong> <%= course.schedule %></p><% } %>
         <% if (enrollment && enrollment.status === 'active') { %>
           <a href="/dashboard/courses/<%= course.slug %>" class="btn btn-accent btn-block btn-lg">Open course</a>
         <% } else if (enrollment && enrollment.status === 'pending') { %>
@@ -83,7 +83,7 @@
       <% } %>
       <div class="side-card side-card-dark">
         <h3>Questions?</h3>
-        <p>Talk to us about cohort dates, prerequisites or group enrolments.</p>
+        <p>Talk to us about prerequisites, payment or group enrolments.</p>
         <a href="/contact" class="btn btn-accent btn-sm">Contact us</a>
       </div>
     </aside>

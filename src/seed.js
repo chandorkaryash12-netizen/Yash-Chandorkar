@@ -15,9 +15,9 @@ function roadmapCourse() {
     level: 'Beginner to Professional',
     price: 677,
     originalPrice: 0,
-    duration: '11 live sessions · 2.5 hours each',
-    schedule: 'Weekends: Saturday 8:00 PM–10:30 PM · Sunday 12:00 PM–2:30 PM',
-    format: 'Live online cohort + recordings',
+    duration: '11 recorded modules + career bonus',
+    schedule: '',
+    format: 'Recorded video lectures · learn at your own pace',
     image: '/images/course-roadmap.svg',
     summary:
       'An 11-module programme that teaches you how to analyse businesses, industries, financial statements and valuations, and finish by writing a full equity research report on P N Gadgil Jewellers.',
@@ -26,7 +26,7 @@ function roadmapCourse() {
       'This programme takes you step by step through the exact workflow an analyst uses: understand the business, study the industry, read annual reports and concalls, analyse the three financial statements, judge management, value the company and write the investment thesis.\n\n' +
       'Along the way we use examples from many industries, and the final case study is a complete sell-side style research report on **P N Gadgil Jewellers Limited**, covering industry analysis, business model, financials, peer comparison, valuation, risks and a Buy / Hold / Sell recommendation.',
     highlights: [
-      '11 live modules + career roadmap bonus, 27+ hours of instruction',
+      '11 recorded modules + career roadmap bonus: watch anytime, as often as you like',
       'Real Indian case studies: Reliance, Tata, Satyam, Titan, Dixon, Deepak Nitrite, Yes Bank',
       'Annual report and concall decoding frameworks',
       'DCF, EV/EBITDA and P/E valuation models',
@@ -122,9 +122,9 @@ function goldCourse() {
     level: 'Intermediate to Advanced',
     price: 999,
     originalPrice: 0,
-    duration: '30 modules · video lessons + deep-dive notes',
-    schedule: 'Recorded video modules with laptop and mobile study notes. Learn at your own pace',
-    format: 'Video lessons + slide decks + deep-dive notes (laptop & mobile)',
+    duration: '30 recorded modules',
+    schedule: '',
+    format: 'Recorded video lectures + slide decks + deep-dive notes · learn at your own pace',
     image: '/images/course-gold.svg',
     summary:
       'A complete sector specialisation on Indian gold and jewellery: market structure, the value chain, consumer behaviour, gold financing, diamonds, store economics, financials, regulation, 13 listed-company deep-dives, KPIs, valuation and risks, ending with a full institutional-style sector report.',
@@ -435,7 +435,7 @@ function buildSeed() {
       testimonials_title: 'What learners say',
       faq_title: 'Frequently asked questions',
       cta_title: 'Ready to think like an analyst?',
-      cta_subtitle: 'Create your free account to access members-only research and enrol in the next cohort.',
+      cta_subtitle: 'Create your free account to access members-only research and start learning today.',
       cta_button: 'Create free account',
       about_eyebrow: 'About Vector',
       about_title: 'Built by an analyst, for future analysts.',
@@ -454,7 +454,7 @@ function buildSeed() {
       mission_title: 'Our mission',
       mission_body: 'To make institution-grade equity research skills accessible to every serious student and investor in India.',
       contact_title: 'Get in touch',
-      contact_subtitle: 'Questions about a course, a cohort date or our research? Send us a message and we will reply within one business day.',
+      contact_subtitle: 'Questions about a course, access or our research? Send us a message and we will reply within one business day.',
     },
     stats: [
       { value: '11', label: 'Core research modules' },
@@ -475,7 +475,7 @@ function buildSeed() {
     testimonials: [],
     faqs: [
       { q: 'Do I need a finance background?', a: 'No. Road Map to Equity Research starts from stock-market foundations and builds up to valuation and report writing. Basic comfort with Excel helps.' },
-      { q: 'Are the sessions live or recorded?', a: 'Sessions are live on weekends, and recordings are available in your dashboard so you can revise or catch up.' },
+      { q: 'Are the lectures live or recorded?', a: 'All lectures are pre-recorded. Watch them anytime, at your own pace, and rewatch them as often as you like from your dashboard.' },
       { q: 'Which course should I take first?', a: 'Start with Road Map to Equity Research. The 30-module Gold & Jewellery sector course assumes you are comfortable with financial statements and basic valuation.' },
       { q: 'How do I pay and get access?', a: 'Create an account and click Enrol on a course. We share payment details, and your course unlocks in your dashboard as soon as payment is confirmed.' },
       { q: 'Is this investment advice?', a: 'No. Vector is an education and research platform. Nothing we publish is a recommendation to buy or sell any security.' },

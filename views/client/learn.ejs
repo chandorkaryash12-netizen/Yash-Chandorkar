@@ -4,7 +4,7 @@
     <a href="/dashboard" class="back-link">← My dashboard</a>
     <span class="eyebrow eyebrow-light"><%= course.category %></span>
     <h1><%= course.title %></h1>
-    <p class="lead"><%= course.schedule %></p>
+    <p class="lead"><%= course.schedule || course.format %></p>
   </div>
 </section>
 <section class="section">
@@ -33,7 +33,7 @@
             <% }) %>
           </ul>
         <% } else { %>
-          <p class="small muted">Session links, recordings and workbooks will appear here as the cohort progresses.</p>
+          <p class="small muted">Your recorded lectures, slides and workbooks will appear here.</p>
         <% } %>
       </div>
       <% if (course.outcomes && course.outcomes.length) { %>
