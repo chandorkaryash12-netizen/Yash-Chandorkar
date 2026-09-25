@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { buildSeed } = require('./seed');
+const cloud = require('./cloud');
 
 const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '..', 'data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
@@ -49,6 +50,7 @@ function save() {
   const tmp = DB_FILE + '.tmp';
   fs.writeFileSync(tmp, JSON.stringify(state, null, 2));
   fs.renameSync(tmp, DB_FILE);
+  cloud.pushState(state);
 }
 
 function get() {
@@ -77,4 +79,4 @@ function uniqueSlug(collection, base, exceptId) {
   return slug;
 }
 
-module.exports = { load, save, get, id, slugify, uniqueSlug, DATA_DIR, UPLOAD_DIR };
+module.exports = { load, save, get, id, slugify, uniqueSlug, DATA_DIR, DB_FILE, UPLOAD_DIR };

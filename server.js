@@ -8,6 +8,7 @@ const db = require('./src/db');
 const helpers = require('./src/helpers');
 const security = require('./src/security');
 const theme = require('./src/theme');
+const cloud = require('./src/cloud');
 
 const PORT = process.env.PORT || 3000;
 const isProd = process.env.NODE_ENV === 'production';
@@ -91,8 +92,30 @@ function ensureAdmin() {
   }
 }
 
+async function start() {
+  if (cloud.enabled) {
+    // Free hosts wipe local files on restart: pull the saved copy first.
+    await cloud.restore(db.DB_FILE, db.UPLOAD_DIR);
+    db.load();
+    ensureAdmin();
+    cloud.markReady();
+    cloud.pushState(db.get());
+  }
+  const server = app.listen(PORT, () => console.log(`Vector running at http://localhost:${PORT}`));
+  const shutdown = () => {
+    server.close();
+    // Give any in-flight MongoDB write a moment to finish before exiting.
+    setTimeout(() => cloud.close().finally(() => process.exit(0)), 3000);
+  };
+  process.on('SIGTERM', shutdown);
+  process.on('SIGINT', shutdown);
+}
+
 if (require.main === module) {
-  app.listen(PORT, () => console.log(`Vector running at http://localhost:${PORT}`));
+  start().catch((err) => {
+    console.error('Could not start Vector:', err.message);
+    process.exit(1);
+  });
 }
 
 module.exports = app;

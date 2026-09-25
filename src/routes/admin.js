@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const db = require('../db');
+const cloud = require('../cloud');
 const contentSchema = require('../contentSchema');
 const { seedTheme } = require('../theme');
 const {
@@ -370,6 +371,7 @@ router.post('/media/:id/delete', (req, res) => {
   if (item) {
     const file = path.join(db.UPLOAD_DIR, path.basename(item.url));
     fs.rm(file, { force: true }, () => {});
+    cloud.deleteFile(path.basename(item.url));
     data.media = data.media.filter((m) => m.id !== item.id);
     db.save();
     flash(req, 'success', 'Image deleted. Any page still using it will show no image.');

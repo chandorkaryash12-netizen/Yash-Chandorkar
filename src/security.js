@@ -3,6 +3,7 @@ const fs = require('fs');
 const crypto = require('crypto');
 const multer = require('multer');
 const db = require('./db');
+const cloud = require('./cloud');
 const { randomToken } = require('./helpers');
 
 // ---- Session secret ------------------------------------------------------
@@ -142,6 +143,7 @@ function uploadFields(fields) {
 
 function registerUpload(file, uploadedBy) {
   const url = `/uploads/${file.filename}`;
+  cloud.pushFile(file.filename, file.path, file.mimetype);
   db.get().media.unshift({
     id: db.id(),
     url,

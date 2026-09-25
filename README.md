@@ -57,6 +57,16 @@ Content and uploaded images are stored on the attached 1 GB disk (`/var/data`), 
 
 Every push to `main` redeploys automatically. Back up by downloading Admin → Dashboard → *download all site data*.
 
+## Free hosting: Render Free + MongoDB Atlas Free
+
+Render's free plan wipes local files whenever the site sleeps or restarts. Set `MONGODB_URI` and the site keeps a copy of everything (members, enrolments, admin edits, uploaded images) in a free MongoDB Atlas database, restoring it automatically on every start.
+
+1. **MongoDB Atlas:** sign up at mongodb.com/atlas → create a free **M0** cluster → **Database Access**: add a user and password → **Network Access**: add `0.0.0.0/0` (Render free has no fixed IP) → **Connect → Drivers**: copy the connection string and put your password into it.
+2. **Render:** **New → Web Service** → this repo, branch `main`, Build `npm install`, Start `npm start`, Instance **Free**.
+3. Environment variables: `NODE_ENV=production`, `NODE_VERSION=22`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `SESSION_SECRET` (Generate), and `MONGODB_URI` (the Atlas string).
+
+The logs show `MongoDB: restored site data…` on each start. The free site sleeps after 15 idle minutes; the first visit after that takes about a minute.
+
 ### Other hosts
 
 Any Node 18+ host works: set `NODE_ENV=production`, `SESSION_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, point `DATA_DIR` at a persistent disk, and serve over HTTPS.
