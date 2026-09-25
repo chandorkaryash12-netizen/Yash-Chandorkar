@@ -1,4 +1,4 @@
-/* Vector — admin console */
+/* Vector: admin console */
 body { background: #f4f5f2; }
 .admin { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
 .admin-side {
@@ -168,3 +168,4 @@ input[type=range] { padding: 0; accent-color: var(--primary); }
   .search input { width: 100%; }
   .image-field-row { flex-direction: column; }
 }
+.kpi strong { font-variant-numeric: lining-nums tabular-nums; }

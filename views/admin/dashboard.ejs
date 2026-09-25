@@ -19,7 +19,7 @@
       <% pending.forEach(function (e) { %>
         <tr>
           <td><strong><%= e.user ? e.user.name : 'Deleted user' %></strong><br><span class="small muted"><%= e.user ? e.user.email : '' %></span></td>
-          <td><%= e.course ? e.course.title : '—' %><br><span class="small muted"><%= h.formatDate(e.createdAt) %></span></td>
+          <td><%= e.course ? e.course.title : 'Deleted course' %><br><span class="small muted"><%= h.formatDate(e.createdAt) %></span></td>
           <td class="actions">
             <form method="post" action="/admin/enrollments/<%= e.id %>/status"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="status" value="active"><button class="btn btn-accent btn-xs">Approve</button></form>
           </td>
@@ -46,7 +46,7 @@
   <section class="panel">
     <div class="panel-head"><h2>Latest messages</h2><a href="/admin/messages">Inbox →</a></div>
     <% if (!messages.length) { %><p class="muted">No messages yet.</p><% } %>
-    <ul class="plain-list"><% messages.forEach(function (m) { %><li><% if (!m.read) { %><span class="dot"></span><% } %><strong><%= m.name %></strong> — <%= m.subject %><br><span class="small muted"><%= m.message.slice(0, 90) %><%= m.message.length > 90 ? '…' : '' %></span></li><% }) %></ul>
+    <ul class="plain-list"><% messages.forEach(function (m) { %><li><% if (!m.read) { %><span class="dot"></span><% } %><strong><%= m.name %></strong>: <%= m.subject %><br><span class="small muted"><%= m.message.slice(0, 90) %><%= m.message.length > 90 ? '…' : '' %></span></li><% }) %></ul>
   </section>
 </div>
 <p class="small muted">Backup: <a href="/admin/backup">download all site data (JSON)</a>. Passwords are not included.</p>

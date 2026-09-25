@@ -1,13 +1,13 @@
-# Vector — Equity Research website
+# Vector Equity Research website
 
 Professional website for **Vector Equity Research** with:
 
-- **Public site** — home, courses, course detail pages, research library, about, contact and disclaimer.
-- **Products** — *Road Map to Equity Research* (11 modules) and *Sector Expertise: Gold & Jewellery Research* (10 modules), plus three seeded research notes (PNG Jewellers deep-dive, Q4 FY26 jewellery concall summary, gold seasonality/cyclicality framework).
-- **Client accounts** — sign up, log in, enrol in courses, track enrolment status, open unlocked courses and materials, read members-only research, edit profile/password.
-- **Admin console** (`/admin`) — edit every text and image on the site, upload images, change colours/fonts/corner style, show/hide home sections, manage courses (pricing, curriculum, materials), publish research, approve enrolments, manage users, read contact messages, and download a backup.
+- **Public site:** home, courses, course detail pages, research library, about, contact and disclaimer.
+- **Products:** *Road Map to Equity Research* (11 modules plus a career bonus, ₹677) and *Sector Expertise: Gold & Jewellery Research* (30 modules, ₹999), plus five seeded research notes (full sector report, KPI framework, PNG Jewellers deep-dive, Q4 FY26 concall summary, gold seasonality framework).
+- **Client accounts:** sign up, log in, enrol in courses, track enrolment status, open unlocked courses and materials, read members-only research, edit profile/password.
+- **Admin console** (`/admin`): edit every text and image on the site, upload images, change colours/fonts/corner style, show/hide home sections, manage courses (pricing, curriculum, materials), publish research, approve enrolments, manage users, read contact messages, and download a backup.
 
-Built with Node.js + Express + EJS. All data lives in `data/db.json` and uploaded images in `data/uploads/` — no database server needed.
+Built with Node.js + Express + EJS. All data lives in `data/db.json` and uploaded images in `data/uploads/`, so no database server is needed.
 
 ## Run locally
 

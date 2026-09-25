@@ -7,8 +7,8 @@ function seedTheme() {
     secondary: '#aab3be',
     background: '#f6f7f8',
     text: '#15171a',
-    headingFont: 'Playfair Display',
-    bodyFont: 'Inter',
+    headingFont: 'Cormorant Garamond',
+    bodyFont: 'Manrope',
     radius: 14,
   };
 }

@@ -1,4 +1,4 @@
-// Vector admin — repeaters, image previews, theme preview and small helpers.
+// Vector admin: repeaters, image previews, theme preview and small helpers.
 (function () {
   var side = document.querySelector('[data-admin-side]');
   var tog = document.querySelector('[data-admin-toggle]');

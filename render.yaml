@@ -1,4 +1,4 @@
-# Render Blueprint — https://render.com/docs/blueprint-spec
+# Render Blueprint: https://render.com/docs/blueprint-spec
 # New → Blueprint → pick this repo. Render will ask for ADMIN_EMAIL and
 # ADMIN_PASSWORD; everything else is filled in automatically.
 services:

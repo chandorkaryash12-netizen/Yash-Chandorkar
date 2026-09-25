@@ -160,8 +160,8 @@ router.post('/settings', uploadFields([{ name: 'logo', maxCount: 1 }, { name: 'f
 
 // ---- Theme ---------------------------------------------------------------------
 const FONTS = {
-  heading: ['Playfair Display', 'DM Serif Display', 'Libre Baskerville', 'Cormorant Garamond', 'Merriweather', 'Lora', 'Montserrat', 'Poppins', 'Inter'],
-  body: ['Inter', 'Source Sans 3', 'Open Sans', 'Lato', 'Roboto', 'Nunito Sans', 'Poppins', 'Work Sans'],
+  heading: ['Cormorant Garamond', 'Cinzel', 'DM Serif Display', 'IBM Plex Serif', 'Playfair Display', 'Libre Baskerville', 'Merriweather', 'Lora', 'Montserrat', 'Poppins', 'Inter'],
+  body: ['Manrope', 'Inter', 'DM Sans', 'IBM Plex Sans', 'Source Sans 3', 'Open Sans', 'Lato', 'Roboto', 'Nunito Sans', 'Poppins', 'Work Sans'],
 };
 
 router.get('/theme', (req, res) => {

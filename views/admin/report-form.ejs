@@ -14,7 +14,7 @@
       <section class="panel">
         <div class="panel-head"><h2>Publish</h2></div>
         <label class="toggle"><input type="checkbox" name="published" value="1" <%= report.published ? 'checked' : '' %>><span></span>Published</label>
-        <label>Access<select name="access"><option value="public" <%= report.access !== 'members' ? 'selected' : '' %>>Public — anyone can read</option><option value="members" <%= report.access === 'members' ? 'selected' : '' %>>Members — login required</option></select></label>
+        <label>Access<select name="access"><option value="public" <%= report.access !== 'members' ? 'selected' : '' %>>Public (anyone can read)</option><option value="members" <%= report.access === 'members' ? 'selected' : '' %>>Members (login required)</option></select></label>
         <label>Date<input type="date" name="date" value="<%= report.date || '' %>"></label>
         <label>URL slug<input name="slug" value="<%= report.slug || '' %>" placeholder="auto from title"></label>
         <button class="btn btn-accent btn-block">Save report</button>

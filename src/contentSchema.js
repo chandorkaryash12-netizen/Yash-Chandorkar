@@ -3,18 +3,18 @@
 // the editor automatically; reference it in a view as content.<key>.
 module.exports = [
   {
-    group: 'Home — Hero',
+    group: 'Home: Hero',
     fields: [
       { key: 'hero_eyebrow', label: 'Small heading above title' },
       { key: 'hero_title', label: 'Main headline', type: 'textarea', rows: 2 },
       { key: 'hero_subtitle', label: 'Sub-headline', type: 'textarea', rows: 3 },
       { key: 'hero_cta_primary', label: 'Primary button text' },
       { key: 'hero_cta_secondary', label: 'Secondary button text' },
-      { key: 'hero_image', label: 'Hero image (optional — replaces the emblem)', type: 'image' },
+      { key: 'hero_image', label: 'Hero image (optional, replaces the emblem)', type: 'image' },
     ],
   },
   {
-    group: 'Home — Courses section',
+    group: 'Home: Courses section',
     fields: [
       { key: 'courses_eyebrow', label: 'Eyebrow' },
       { key: 'courses_title', label: 'Title' },
@@ -22,7 +22,7 @@ module.exports = [
     ],
   },
   {
-    group: 'Home — Method section',
+    group: 'Home: Method section',
     fields: [
       { key: 'approach_eyebrow', label: 'Eyebrow' },
       { key: 'approach_title', label: 'Title' },
@@ -30,7 +30,7 @@ module.exports = [
     ],
   },
   {
-    group: 'Home — Research section',
+    group: 'Home: Research section',
     fields: [
       { key: 'research_eyebrow', label: 'Eyebrow' },
       { key: 'research_title', label: 'Title' },
@@ -38,7 +38,7 @@ module.exports = [
     ],
   },
   {
-    group: 'Home — Testimonials, FAQ & call to action',
+    group: 'Home: Testimonials, FAQ & call to action',
     fields: [
       { key: 'testimonials_title', label: 'Testimonials title' },
       { key: 'faq_title', label: 'FAQ title' },

@@ -67,7 +67,7 @@ router.post('/contact', (req, res) => {
     subject: String(req.body.subject || '').trim().slice(0, 200),
     message: String(req.body.message || '').trim().slice(0, 5000),
   };
-  // Honeypot field — real visitors never see or fill it.
+  // Honeypot field: real visitors never see or fill it.
   if (req.body.website) return res.redirect('/contact');
   if (!form.name || !isEmail(form.email) || !form.message) {
     res.locals.flash = [{ type: 'error', text: 'Please enter your name, a valid email and a message.' }];
@@ -75,7 +75,7 @@ router.post('/contact', (req, res) => {
   }
   db.get().messages.unshift({ id: db.id(), ...form, read: false, createdAt: new Date().toISOString() });
   db.save();
-  flash(req, 'success', 'Thank you — your message has been sent. We will get back to you shortly.');
+  flash(req, 'success', 'Thank you. Your message has been sent. We will get back to you shortly.');
   res.redirect(back(req, '/contact'));
 });
 

@@ -12,7 +12,7 @@
         <% if (course.duration) { %><li><span>Duration</span><%= course.duration %></li><% } %>
         <% if (course.format) { %><li><span>Format</span><%= course.format %></li><% } %>
       </ul>
-      <% if (!course.published) { %><p class="chip chip-warn">Draft — only admins can see this page</p><% } %>
+      <% if (!course.published) { %><p class="chip chip-warn">Draft: only admins can see this page</p><% } %>
     </div>
     <aside class="enrol-card">
       <% if (course.image) { %><img src="<%= course.image %>" alt="" class="enrol-img"><% } %>

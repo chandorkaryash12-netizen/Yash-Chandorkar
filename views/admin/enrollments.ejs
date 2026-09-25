@@ -10,7 +10,7 @@
 <form method="post" action="/admin/enrollments" class="panel hidden" id="manual">
   <input type="hidden" name="_csrf" value="<%= csrfToken %>">
   <div class="form-row">
-    <label>Client<select name="userId"><% clients.forEach(function (u) { %><option value="<%= u.id %>"><%= u.name %> — <%= u.email %></option><% }) %></select></label>
+    <label>Client<select name="userId"><% clients.forEach(function (u) { %><option value="<%= u.id %>"><%= u.name %> (<%= u.email %>)</option><% }) %></select></label>
     <label>Course<select name="courseId"><% courses.forEach(function (c) { %><option value="<%= c.id %>"><%= c.title %></option><% }) %></select></label>
   </div>
   <button class="btn btn-accent btn-sm">Grant access</button>

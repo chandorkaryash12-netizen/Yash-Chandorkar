@@ -1,4 +1,4 @@
-// Vector — small progressive enhancements. The site works without JS.
+// Vector: small progressive enhancements. The site works without JS.
 (function () {
   var toggle = document.querySelector('[data-nav-toggle]');
   var nav = document.querySelector('[data-nav]');

@@ -1,7 +1,7 @@
 {
   "name": "vector-equity-research",
   "version": "1.0.0",
-  "description": "Vector — Equity Research website with courses, research, client & admin portals and a built-in CMS",
+  "description": "Vector Equity Research website with courses, research, client and admin portals, and a built-in CMS",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
