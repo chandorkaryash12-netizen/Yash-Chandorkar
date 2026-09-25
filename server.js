@@ -95,7 +95,7 @@ function ensureAdmin() {
 // Plain-language hint for the most common MongoDB Atlas setup mistakes.
 function mongoHint(err) {
   const m = String(err && err.message || '');
-  const uri = process.env.MONGODB_URI || '';
+  const uri = cloud.URI;
   if (/<db_password>|<password>/i.test(uri)) return 'MONGODB_URI still contains <db_password>. Replace it (and the < >) with your database user password.';
   if (!/^mongodb(\+srv)?:\/\//.test(uri)) return 'MONGODB_URI must start with mongodb+srv:// . Copy it again from Atlas > Connect > Drivers.';
   if (/auth|authentication|bad auth/i.test(m)) return 'Wrong database username or password. In Atlas > Database Access, check the user (or reset its password) and update MONGODB_URI.';

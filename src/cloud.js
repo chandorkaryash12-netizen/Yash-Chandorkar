@@ -8,7 +8,14 @@
 const fs = require('fs');
 const path = require('path');
 
-const URI = process.env.MONGODB_URI || '';
+// Forgive common copy-paste slips: spaces, wrapping quotes, "MONGODB_URI=" prefix.
+function cleanUri(raw) {
+  let u = String(raw || '').trim();
+  u = u.replace(/^MONGODB_URI\s*=\s*/i, '').trim();
+  u = u.replace(/^['"]+|['"]+$/g, '').trim();
+  return u;
+}
+const URI = cleanUri(process.env.MONGODB_URI);
 const DB_NAME = process.env.MONGODB_DB || 'vector';
 const STATE_ID = 'site';
 
@@ -107,4 +114,4 @@ async function close() {
   if (client) await client.close();
 }
 
-module.exports = { enabled, restore, markReady, pushState, pushFile, deleteFile, close };
+module.exports = { URI, enabled, restore, markReady, pushState, pushFile, deleteFile, close };
