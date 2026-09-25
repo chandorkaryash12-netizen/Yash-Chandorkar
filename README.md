@@ -48,9 +48,10 @@ This repo includes a `render.yaml` Blueprint.
 
 1. Sign in at [render.com](https://render.com) with GitHub.
 2. **New → Blueprint**, pick this repository, and confirm.
-3. When asked, enter **ADMIN_EMAIL** and **ADMIN_PASSWORD** (your admin login). `SESSION_SECRET` is generated for you.
+3. Nothing to type: the admin email is set to chandorkaryash12@gmail.com, and Render generates the admin password and `SESSION_SECRET`.
 4. Click **Apply**. After the build finishes, your site is live at `https://vector-equity-research.onrender.com` (the exact URL is shown in the dashboard).
-5. Optional: add your own domain under **Settings → Custom Domains**.
+5. Get your admin password: open the service → **Environment** → reveal **ADMIN_PASSWORD**. Log in at `/admin/login`, then set your own password in **Admin → My account**.
+6. Optional: add your own domain under **Settings → Custom Domains**.
 
 Content and uploaded images are stored on the attached 1 GB disk (`/var/data`), so they survive redeploys. The Starter instance plus disk costs roughly US$7–8/month; free instances cannot keep a disk, so edits would be lost.
 

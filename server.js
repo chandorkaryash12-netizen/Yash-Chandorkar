@@ -72,7 +72,7 @@ app.use((err, req, res, next) => {
 function ensureAdmin() {
   const data = db.get();
   if (data.users.some((u) => u.role === 'admin')) return;
-  const email = (process.env.ADMIN_EMAIL || 'admin@vector.local').toLowerCase();
+  const email = (process.env.ADMIN_EMAIL || 'chandorkaryash12@gmail.com').toLowerCase();
   const password = process.env.ADMIN_PASSWORD || helpers.randomToken(6);
   data.users.push({
     id: db.id(),
