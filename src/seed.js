@@ -26,8 +26,8 @@ function roadmapCourse() {
       'This programme takes you step by step through the exact workflow an analyst uses: understand the business, study the industry, read annual reports and concalls, analyse the three financial statements, judge management, value the company and write the investment thesis.\n\n' +
       'Along the way we use examples from many industries, and the final case study is a complete sell-side style research report on **P N Gadgil Jewellers Limited** — industry analysis, business model, financials, peer comparison, valuation, risks and a Buy / Hold / Sell recommendation.',
     highlights: [
-      '11 live modules, 27+ hours of instruction',
-      'Real Indian case studies — Reliance, HDFC Bank, Asian Paints, Dixon, Titan',
+      '11 live modules + career roadmap bonus, 27+ hours of instruction',
+      'Real Indian case studies — Reliance, Tata, Satyam, Titan, Dixon, Deepak Nitrite, Yes Bank',
       'Annual report and concall decoding frameworks',
       'DCF, EV/EBITDA and P/E valuation models',
       'Sell-side report template you keep for life',
@@ -45,37 +45,37 @@ function roadmapCourse() {
       {
         title: 'Stock Market Foundations',
         summary: 'How stock markets function and how analysts operate.',
-        topics: ['Introduction to equity research', 'How stock markets work', 'Market participants — FIIs, DIIs, retail investors', 'Market cycles and wealth creation', 'How analysts research companies'],
+        topics: ['Introduction to equity research', 'How stock markets work', 'Market participants — FIIs, DIIs, retail investors', 'Market cycles and wealth creation', 'How analysts research companies — examples: Reliance Industries, HDFC Bank'],
       },
       {
         title: 'Understanding Businesses',
-        summary: 'Stock ≠ ticker. Stock = business. How companies create, deliver and capture value.',
-        topics: ['Business models — the five questions', 'Value chain analysis', 'Competitive advantages (economic moats)', 'B2B vs B2C vs B2G businesses', 'Scalability of business models'],
+        summary: 'Stock ≠ ticker. Stock = business. How a company creates, delivers and captures value.',
+        topics: ['The five questions: who is the customer, what problem, how it makes money, key costs, what drives growth', 'User vs payer — Google, Zomato, Apple, Titan examples', 'Value chain analysis', 'Competitive advantages (economic moats)', 'B2B vs B2C vs B2G and scalability of business models'],
       },
       {
         title: 'Industry Analysis',
-        summary: 'Good company + bad industry = bad investment. Understand the industry first.',
-        topics: ['Industry size and market structure', 'Industry growth drivers', "Porter's Five Forces", 'Government regulations', 'Cyclical vs structural industries'],
+        summary: 'Good company + bad industry = bad investment. The industry sets the profitability ceiling.',
+        topics: ['Industry size, CAGR and market structure — monopoly, oligopoly, fragmented', 'Temporary vs structural growth drivers', "Porter's Five Forces — telecom, restaurants, chips, e-commerce, OTT examples", 'Government regulations as barriers and opportunities', 'Cyclical (steel, cement) vs structural (FMCG, pharma, IT) industries'],
       },
       {
         title: 'Reading Annual Reports & Concall Analysis',
-        summary: 'An annual report is not a novel — read it like an investigator.',
-        topics: ['How to read annual reports', 'How to analyse concalls', 'Understanding management commentary', 'How analysts ask questions to management', 'Notes to accounts: contingent liabilities, related-party transactions, segment data'],
+        summary: 'Golden rule: an annual report is not a novel — read it like an investigator.',
+        topics: ['Annual report structure — MD&A, financials, notes to accounts, governance', 'Red flags: high receivables, other-income spikes, auditor issues, capitalised expenses', 'Concalls: guidance vs actual, tone, repeated phrases, avoided questions', "Decoding management language — 'short-term issue', 'under control'", 'Smart question framework: observation + concern + question'],
       },
       {
         title: 'Financial Statements',
         summary: 'Reading the P&L, balance sheet and cash flow together.',
-        topics: ['Income statement analysis', 'Balance sheet analysis', 'Cash flow statement', 'Working capital analysis', 'Free cash flow analysis'],
+        topics: ['Income statement analysis', 'Balance sheet analysis', 'Cash flow statement — the most important one', 'Working capital analysis', 'Free cash flow analysis'],
       },
       {
         title: 'Ratio Analysis',
-        summary: 'Understanding company performance through ratios.',
-        topics: ['Profitability ratios', 'Efficiency ratios', 'Leverage ratios', 'Valuation ratios'],
+        summary: 'Understanding company performance through ratios — and combining them.',
+        topics: ['Liquidity — current and quick ratio', 'Profitability — gross, EBIT and net margin, ROE, ROCE', 'Efficiency — asset, inventory, receivable and payable turnover; cash conversion cycle', 'Leverage — debt/equity, interest coverage, debt/EBITDA', 'Valuation and cash-flow ratios — P/E, EV/EBITDA, P/B, FCF'],
       },
       {
         title: 'Management Analysis',
         summary: '"Can I trust this management with my money?"',
-        topics: ['Promoter background and track record', 'Corporate governance', 'Capital allocation', 'Promoter holding analysis', 'Management red flags'],
+        topics: ['Promoter background — Asian Paints, Reliance', 'Corporate governance — Tata Group vs Satyam', 'Capital allocation — Titan vs Vodafone Idea; ROCE vs cost of capital', 'Promoter holding, pledging and insider selling', 'Management red flags — Yes Bank, DHFL case studies'],
       },
       {
         title: 'Valuation Techniques',
@@ -85,17 +85,22 @@ function roadmapCourse() {
       {
         title: 'Finding Multibagger Stocks',
         summary: 'Multibaggers come from specific triggers plus strong fundamentals. No trigger = no multibagger.',
-        topics: ['Growth triggers', 'Capacity expansion', 'Market share gains', 'Industry tailwinds', 'Small-cap vs large-cap investing'],
+        topics: ['Growth triggers — Dixon (PLI), KPIT (EV transition)', 'Capacity expansion — Deepak Nitrite', 'Market share gains — Asian Paints', 'Industry tailwinds — China+1, EVs, renewables', 'Small-cap vs large-cap — Cera Sanitaryware, HDFC'],
       },
       {
         title: 'Risk Analysis',
-        summary: 'Protecting capital is the first rule.',
+        summary: 'Investor survival — protecting capital is the first rule.',
         topics: ['Accounting manipulation', 'Debt risks', 'Cyclical risks', 'Business disruption', 'Macro risks'],
       },
       {
         title: 'Complete Equity Research Report',
-        summary: 'Capstone — prepare a full research report on P N Gadgil Jewellers Limited.',
-        topics: ['Building an investment thesis', 'Buy / Hold / Sell recommendation', 'Writing a research report', 'Industry, business model, financials, peers, valuation and risks'],
+        summary: 'Capstone — prepare a full sell-side style report on P N Gadgil Jewellers Limited.',
+        topics: ['Building an investment thesis', 'Industry analysis, business model, financials, peer comparison, valuation and risks', 'Buy / Hold / Sell recommendation', 'Writing the report in the sell-side format'],
+      },
+      {
+        title: 'Bonus: How to Become an Equity Research Analyst',
+        summary: 'Career roadmap — jobs, skills and certifications.',
+        topics: ['Roles: sell-side, buy-side, KPO and research boutiques', 'Skills: Excel, financial modelling, report writing', 'Certifications: CFA, NISM', 'Building a portfolio with your own research report'],
       },
     ],
     materials: [],
@@ -107,91 +112,78 @@ function roadmapCourse() {
 }
 
 function goldCourse() {
+  const m = (title, summary, topics) => ({ title, summary, topics });
   return {
     id: uid(),
     slug: 'sector-expertise-gold-research',
     title: 'Sector Expertise: Gold & Jewellery Research',
-    subtitle: 'The ₹6+ lakh crore sector nobody studies properly — analysed like an institutional sector analyst.',
+    subtitle: 'The ₹6+ lakh crore sector nobody studies properly — 30 modules, 13 company deep-dives, one full sector report.',
     category: 'Sector Expertise',
-    level: 'Intermediate',
+    level: 'Intermediate to Advanced',
     price: 9999,
     originalPrice: 14999,
-    duration: '10 modules · live + recorded',
-    schedule: 'Weekend cohort — timings shared on enrolment',
-    format: 'Live online cohort + recordings + sector workbook',
+    duration: '30 modules · video lessons + deep-dive notes',
+    schedule: 'Recorded video modules with laptop and mobile study notes — learn at your own pace',
+    format: 'Video lessons + slide decks + deep-dive notes (laptop & mobile)',
     image: '/images/course-gold.svg',
     summary:
-      'A deep sector specialisation on Indian gold and jewellery: demand drivers, gold-price cycles, regulation, retail store economics, studded mix, hedging and valuation of Titan, Kalyan, Senco, Thangamayil, PNG and more.',
+      'A complete sector specialisation on Indian gold and jewellery: market structure, the value chain, consumer behaviour, gold financing, diamonds, store economics, financials, regulation, 13 listed-company deep-dives, KPIs, valuation, risks — ending with a full institutional-style sector report.',
     description:
       'Jewellery looks like a "boring, traditional" sector from the outside — people assume it is just gold prices going up and down. In reality it sits at the intersection of **commodity economics**, **retail economics**, **financial engineering** and **behavioural and cultural economics**. That is why most investors misprice it.\n\n' +
-      'Every listed jewellery company is really valued on two questions: is gold going up or down, and is this company taking share from the local goldsmith down the street? This course teaches you to answer both — and to track the handful of KPIs that actually move these stocks.\n\n' +
-      'You will finish with a sector model, a KPI tracker and a peer valuation covering the listed retail and export/manufacturing names.',
+      'Every listed jewellery company is really valued on two questions: is gold going up or down, and is this company taking share from the local goldsmith down the street? Organised retail has moved from roughly 5–10% of the market in 2000 to about 35–40% in FY25 — and the organised players are compounding revenue at 15–35%+ a year inside a market growing 8–10%.\n\n' +
+      '## How the course is built\n' +
+      '- **Modules 1–10 — Sector foundations:** market structure, the value chain, consumer behaviour, product mix, gold-market mechanics, gold financing, diamonds and manufacturing.\n' +
+      '- **Modules 11–16 — Analyst toolkit:** store economics and SSSG, franchise payback, P&L and balance-sheet analysis, inventory risk and regulation.\n' +
+      '- **Modules 17–22 — 13 company deep-dives:** Titan, Kalyan, Senco, PNG, Thangamayil, PC Jeweller, BlueStone, TBZ, Sky Gold, Rajesh Exports, Goldiam, Renaissance Global and Asian Star.\n' +
+      '- **Modules 23–30 — Putting it together:** competitive analysis, the KPI masterclass, growth drivers, risk register, valuation, exports, ESG — and a complete sector research report.\n\n' +
+      'Every module comes with a video lesson, a slide deck and a written deep-dive note formatted for both laptop and mobile.',
     highlights: [
-      'India is the world\'s #2 gold consumer — learn how that demand really works',
-      'Organised vs unorganised: the structural thesis behind every listed jeweller',
-      'Studded mix, SSSG, old-gold exchange and hedging explained with real numbers',
-      'Store economics: legacy vs lifestyle formats, COCO vs FOCO, break-even',
-      'Quarterly concall decoding — Titan, Kalyan, PNG, Thangamayil, BlueStone',
-      'Peer valuation workbook for retail and export names',
+      '30 modules with video, slides and written deep-dive notes',
+      '13 listed-company deep-dives — retail and export/manufacturing',
+      'Gold Metal Loans, hedging and inventory risk explained with real filings',
+      'Store economics, SSSG and franchise (FOCO) payback maths',
+      'KPI masterclass: 12 metrics and who actually discloses them',
+      'Capstone: a full institutional-style Indian gold jewellery sector report',
     ],
     outcomes: [
-      'Break down the jewellery sector from first principles',
-      'Separate seasonality from long-term gold-price cycles',
-      'Explain why Titan trades at a premium to Thangamayil',
-      'Read a jewellery concall and pull out the numbers that matter',
-      'Build and defend a sector view and stock recommendation',
+      'Break down the Indian jewellery sector from first principles',
+      'Decompose revenue growth into volume, gold price, mix and new stores',
+      'Explain why P/E multiples span ~9x to ~74x across comparable retailers',
+      'Read a jeweller\'s balance sheet — GML, hedging, inventory days, ROCE',
+      'Underwrite retail and export/manufacturing names with the right framework',
+      'Write and defend a complete sector research report',
     ],
     modules: [
-      {
-        title: 'Welcome to the ₹6+ Lakh Crore Sector Nobody Studies Properly',
-        summary: 'Scale, structure and the single most important concept in the sector.',
-        topics: ['Indian jewellery market size (~700–800 tonnes of gold a year)', 'Organised (~35–40%) vs unorganised (~60–65%)', 'Gold vs diamond vs silver vs platinum — the product mix', 'Branded vs local — why a brand commands a premium', 'Domestic retail vs export/manufacturing — two different businesses'],
-      },
-      {
-        title: 'What Drives Gold Jewellery Demand',
-        summary: 'Gold jewellery is a consumption + investment hybrid — which is why it behaves unlike normal retail.',
-        topics: ['Cultural demand — weddings, festivals, store of wealth', 'Investment demand — inflation hedge, currency, safe haven', 'Income-linked consumption — rural cash flow and urban salaries', 'Seasonality: wedding season, Dhanteras, Akshaya Tritiya, harvest', 'Rural vs urban demand cycles'],
-      },
-      {
-        title: 'Gold Price Cycles & Cyclicality',
-        summary: 'Seasonality drives short-term earnings visibility; cyclicality drives long-term valuation multiples.',
-        topics: ['Short-term vs long-term reaction to gold prices', 'Historical cycles: 2001–11 bull run, 2012–15 correction, 2019–24 bull phase', 'The wealth-effect cycle', 'Margin behaviour when gold rises vs when it stabilises', 'When to own — and avoid — jewellery stocks'],
-      },
-      {
-        title: 'Regulation & Policy',
-        summary: 'How policy has pushed customers toward organised players.',
-        topics: ['Import duty and its effect on smuggling and organised players', 'BIS hallmarking and HUID', 'KYC / PAN norms and cash transactions', 'Demonetisation and GST — long-term formalisation', 'Gold monetisation and gold metal loans'],
-      },
-      {
-        title: 'Jewellery Retail Store Economics',
-        summary: 'Stores, footfall and same-store sales — the retail engine.',
-        topics: ['Legacy vs lifestyle store formats', 'COCO, franchise and FOCO models', 'Store investment, inventory and break-even', 'Revenue and profit per store', 'Same-store sales growth (SSSG) and inventory turnover'],
-      },
-      {
-        title: 'Margins, Studded Mix & Old-Gold Exchange',
-        summary: 'Treat product mix as a margin dial.',
-        topics: ['Why studded/diamond jewellery carries higher margins', 'Making charges and pricing transparency', 'Old-gold exchange as a sourcing and working-capital advantage', 'Shift to lightweight, 18K and 14K jewellery', 'Margin dilution from coins and bars'],
-      },
-      {
-        title: 'Working Capital, Hedging & Gold Metal Loans',
-        summary: 'The balance sheet of a jeweller is mostly gold.',
-        topics: ['Inventory-heavy working capital', 'Gold metal loans (GML) vs bank debt', 'Hedging policy and inventory gains/losses', 'Debt reduction and cash-flow quality', 'Reading the balance sheet of a jeweller'],
-      },
-      {
-        title: 'The Manufacturing & Export Cluster',
-        summary: 'Never compare a retailer\'s margin with an exporter\'s.',
-        topics: ['Rajesh Exports, Sky Gold, Goldiam, Renaissance Global, Asian Star', 'Client concentration and contract manufacturing', 'USD-INR and the global demand cycle', 'Lab-grown diamonds', 'High-volume, low-margin models'],
-      },
-      {
-        title: 'Decoding Jewellery Concalls & KPIs',
-        summary: 'Build a quarterly tracker from what management actually says.',
-        topics: ['Titan, Kalyan, PNG, Thangamayil and BlueStone — Q4 FY26 takeaways', 'Studded mix, SSSG, store additions, hedging %', 'Consumer behaviour shifts in a high-gold-price year', 'Management guidance vs delivery', 'Building your sector KPI tracker'],
-      },
-      {
-        title: 'Valuation, Peer Comparison & Investment Thesis',
-        summary: 'Put it all together into a defensible sector call.',
-        topics: ['P/E and EV/EBITDA across the peer set', 'Why the market pays a premium for Titan', 'Peer comparison workbook', 'Building the investment thesis', 'Final sector note and stock recommendation'],
-      },
+      m('Welcome to the ₹6+ Lakh Crore Sector Nobody Studies Properly', 'Market size, the organised/unorganised fault line, product mix, and why domestic retail and export manufacturing are different businesses.', ['India gold demand 802.8 t in 2024; jewellery 563.4 t (−2% volume, +22% value)', 'Organised (~35–40%) vs unorganised (~60–65%)', 'Gold vs diamond vs silver vs platinum', 'Branded vs local — why a brand commands a premium', 'Domestic retail vs export/manufacturing']),
+      m('Market Structure: Who Owns the Indian Jewellery Shelf?', 'A national leader surrounded by regional fortresses.', ['Titan/Tanishq vs regional strongholds — Kalyan, Senco, PNG, Thangamayil', 'Market share and regional concentration', 'FOCO (franchise) vs COCO (company-owned) expansion playbooks', 'Online-first insurgents in daily-wear gold']),
+      m('The Full Value Chain: Mining to Your Wardrobe', 'How gold moves through ten stages — and which ones are actually investable.', ['Mining and refining (MMTC-PAMP, LBMA)', 'Bullion import and trading', 'Gold Metal Loans — the most important stage', 'Manufacturing, diamond cutting, wholesalers', 'Retail chains, online D2C and old-gold recycling']),
+      m('Consumer Behaviour Part 1: Weddings, Festivals & the Indian Gold Psychology', 'Why a jeweller\'s year can be read off a religious calendar.', ['~50% of gold jewellery demand is wedding-related', 'Akshaya Tritiya, Dhanteras and the Oct–Feb wedding season', 'Q3 as the strongest quarter', 'Rural vs urban buying motives']),
+      m('Consumer Behaviour Part 2: The New Indian Buyer', 'Premiumisation, lightweight daily-wear and repeat customers.', ['Premiumisation and bigger branded tickets', 'Lightweight and daily-wear jewellery (CaratLane)', 'Men\'s jewellery and Gen Z behaviour', 'Old-gold exchange as a repeat-customer engine']),
+      m('Product Categories: Gold, Diamond, Studded, Platinum, Silver & More', 'Why studded mix is the single most important number for margin quality.', ['Plain gold — the low-margin bread and butter', 'Studded and diamond jewellery margins', 'Platinum, silver and other categories', 'Making charges as the margin lever']),
+      m('The Gold Market: Price, Imports & Supply Chain', 'Why gold price swings hit volume and value differently.', ['The two-sided impact of gold prices', 'Why India imports almost all its gold', 'How companies hedge price risk while holding inventory', 'Recycling and old-gold exchange reducing import dependence']),
+      m('Gold Financing Mechanics: GML, Leasing & Hedging', 'How a jeweller funds gold inventory without blocking cash.', ['How a Gold Metal Loan works — bank lends gold, not cash', 'Lease rates and what financing really costs', 'Hedging so a price swing doesn\'t become a margin crisis', 'Phrases to watch in annual reports and concalls']),
+      m('Diamond Industry: Natural vs Lab-Grown', 'Same carbon, same sparkle — a pricing story turning the industry upside down.', ['India cuts and polishes ~90% of the world\'s diamonds', 'Rough-to-polished journey and pricing pressure', 'Lab-grown prices down ~85–90% since 2020', 'How Goldiam, Rajesh Exports, Renaissance Global and Asian Star are repositioning']),
+      m('Manufacturing: From Karigar\'s Hands to Hallmarked Jewellery', 'Who actually makes India\'s jewellery — and where the profit sits.', ['The karigar ecosystem and Kolkata clusters', 'CAD design, casting and hand-finishing', 'Hallmarking and HUID', 'Making charges and automation']),
+      m('Retail Business Model Part 1: Store Economics & SSSG', 'The metric that separates real demand from store-count arithmetic.', ['What it costs to open a store — capex and inventory', 'Breakeven timelines', 'Reading revenue per store correctly', 'Same-Store Sales Growth (SSSG)']),
+      m('Retail Business Model Part 2: Expansion, Franchise Profitability & Store Payback', 'The maths of growing a store network.', ['Tier 1 saturation vs Tier 2/3 whitespace', 'Franchise economics — two P&Ls, one store', 'Store payback period', 'Inventory turns and store productivity']),
+      m('Financial Analysis Part 1: Reading the P&L Like an Analyst', 'Decompose the numbers before you believe them.', ['Revenue growth: volume, gold price, mix, new stores', 'Gross margin — what survives the cost of gold and stones', 'EBITDA margin — people, rent and marketing', 'PAT margin and why interest matters more than in FMCG']),
+      m('Financial Analysis Part 2: Working Capital, ROCE & Free Cash Flow', 'How the balance sheet funds the business.', ['Inventory days — high by design, rising by risk', 'Working capital and the cash conversion cycle', 'ROCE vs ROE for a capital-intensive retailer', 'Strong profit alongside weak free cash flow']),
+      m('Inventory Management: The Heart of Jewellery Retail Risk', 'Same balance-sheet line, very different risks.', ['Gold inventory vs diamond/studded inventory', 'Studded mix and stock ageing', 'Inventory turnover', 'Hedged vs unhedged inventory']),
+      m('Regulations: The Rules That Move Stock Prices Overnight', 'Six levers that shape the jewellery trade.', ['BIS hallmarking', 'GST — 3% on gold, 5% on making charges', 'Import and customs duty — the biggest lever', 'RBI gold loan rules, KYC/PAN norms and government policy']),
+      m('Titan (Tanishq): The Sector\'s Gold Standard — Full Deep Dive', 'Jewellery, watches, eyecare and emerging businesses.', ['Business segments and business model', 'Retail network, manufacturing and capex', 'Financial deep-dive — revenue, margins, ROE, ROCE', 'Management guidance vs actual']),
+      m('Kalyan Jewellers', 'The FOCO expansion engine — India, Candere and the Middle East.', ['FOCO business model', 'Candere and My Kalyan network', 'International expansion', 'Financials and guidance vs actual']),
+      m('Senco Gold: The East India Specialist', 'Hub-and-spoke franchising and old-gold exchange.', ['Hybrid COCO + franchise model', 'East India concentration', 'Digital and the Melorra deal', 'Financial performance deep-dive']),
+      m('P N Gadgil Jewellers', 'A 192-year heritage brand going pan-India.', ['COCO + FOCO hybrid', 'Store economics and the studded-mix shift', 'YOOU brand and digital', 'Maharashtra leadership and pan-India expansion']),
+      m('Regional & Challenger Retailers', 'Four very different stories.', ['Thangamayil — Tamil Nadu dominance and the Chennai push', 'PC Jeweller — lessons from distress', 'BlueStone — digital-first omnichannel, IPO to FY26 profit', 'TBZ — heritage without a scale engine']),
+      m('The Manufacturing & Export Cluster', 'Never compare a retailer\'s margin with an exporter\'s.', ['Sky Gold — pure B2B manufacturing growth', 'Rajesh Exports — refining and the SEBI order', 'Goldiam International — lab-grown and US tariffs', 'Renaissance Global and Asian Star — D2C and diamond pivots']),
+      m('Full Competitive Analysis', 'Twelve companies, one master table, five investor buckets.', ['The master comparison table', 'Five buckets — national premium, regional, challengers, export, distressed', 'Retail vs manufacturing', 'What each kind of investor should underwrite']),
+      m('The Complete KPI Masterclass', 'Twelve metrics every jewellery investor needs to read correctly.', ['SSSG, ticket size, footfalls and conversion', 'Studded mix and gross margin', 'Inventory days, gold exchange ratio, franchise contribution', 'The disclosure scorecard — what is reported and what isn\'t']),
+      m('Growth Drivers: Why This Sector Has a Long Runway', 'Eight structural tailwinds — and structural vs cyclical.', ['Rising income and urbanisation', 'Premiumisation', 'The organised-share story', 'Store-expansion whitespace']),
+      m('Risks: What Can Go Wrong (And How to Track It)', 'Eight risks rated on likelihood, severity and monitorability.', ['Gold price volatility', 'Demand slowdown', 'Regulatory and duty risk', 'Early-warning signals for each risk']),
+      m('Valuation Framework: Is the Stock Cheap or Expensive?', 'Six lenses that correct for each other\'s blind spots.', ['P/E and EV/EBITDA', 'PEG and growth premium', 'ROCE vs valuation', 'Practical peer comparison scorecard']),
+      m('Export Business: India\'s Global Gems & Jewellery Footprint', 'The structural differentiator between export and domestic names.', ['Export overview and destinations', 'Currency and trade agreements', 'US tariffs', 'Global demand indicators']),
+      m('ESG, Sustainability & the Future', 'What is proven versus what is still early.', ['Responsible sourcing and the Kimberley Process', 'Recycled gold and carbon disclosure', 'Omnichannel, AI/AR', 'Lab-grown diamonds and design-led luxury']),
+      m('Complete Jewellery Sector Research Report', 'Capstone — synthesise all 29 modules into one institutional-style sector note.', ['Executive summary and verdict', 'Competitive landscape — thirteen companies, five buckets', 'Valuation and peer comparison', 'Risk register, outlook and conclusion']),
     ],
     materials: [],
     published: true,
@@ -204,6 +196,74 @@ function goldCourse() {
 function reports() {
   const now = Date.now();
   return [
+    {
+      id: uid(),
+      slug: 'indian-gold-jewellery-sector-report-2026',
+      title: 'Indian Gold Jewellery Sector: Full Sector Report',
+      sector: 'Gold & Jewellery',
+      company: 'Sector note · 13 companies',
+      rating: 'Sector Report',
+      date: new Date(now - 1000 * 60 * 60 * 24 * 3).toISOString().slice(0, 10),
+      image: '',
+      access: 'members',
+      published: true,
+      summary:
+        'A structural, multi-decade share-gain story — not just a cyclical wave. Organised retail has gone from ~5–10% of the market in 2000 to ~35–40% in FY25, while five comparable listed retailers trade across a ~9x–74x P/E range.',
+      body:
+        '## Executive summary\n' +
+        "India's organised gold jewellery retail sector is in the middle of a structural, multi-decade share-gain story. Organised retail's share of the market has moved from roughly 5–10% in 2000 to about 35–40% in FY25, with independent projections of 40–45% by 2028. The overall market grows at a nominal 8–10% a year; organised players inside it are compounding revenue at 15–35%+. Hallmarking, GST/KYC formalisation and brand trust are the engines behind that shift — and none of them are reversing.\n\n" +
+        '## The verdict\n' +
+        '- **Structural call:** the organised-share-gain thesis is intact and accelerating — 13% (2010) → 29% (2018) → 35% (2023).\n' +
+        '- **Cyclical caveat:** FY24–FY26 has been a volume recession dressed as a value boom. Jewellery volume fell to 563.4 tonnes in 2024 (−2%) while value rose 22%; by Q1 2026 investment demand overtook jewellery demand for the first time on record.\n' +
+        '- **Dispersion is the opportunity:** on 15–16 September 2026, P/E ranged from Senco Gold ~9.6x to PC Jeweller ~16.2x, Thangamayil ~39x, Kalyan ~42.6x and Titan ~73.9x. Studded mix — high-20s to low-30s% at Titan/Kalyan vs ~10–11% at Senco, Thangamayil and PNG — explains most of the spread.\n' +
+        '- **Two businesses, two frameworks:** domestic retail and export/manufacturing run on different economics and must never be underwritten with the same checklist.\n\n' +
+        '## Market structure\n' +
+        "India is the world's second-largest gold consumer. Total gold demand reached 802.8 tonnes in 2024 (₹5,15,390 crore). Beyond Titan's national footprint the market is a patchwork of regional fortresses: Kalyan (now ~69% of showrooms outside the South), Senco (80+ of 201 showrooms in West Bengal), PNG (Maharashtra), Thangamayil (all 66 stores in Tamil Nadu) and TBZ (37 stores). Titan holds ~20–22% of the organised segment vs Kalyan's ~7%.\n\n" +
+        '## Swing factors for the next 2–3 years\n' +
+        '1. The gold import duty cycle — raised back to 15% in May 2026 after a cut to 6% in July 2024, the eighth change in fourteen years.\n' +
+        '2. US tariffs on gems & jewellery exports.\n' +
+        '3. Lab-grown diamonds — LGD export volume overtook natural for the first time in FY26.\n' +
+        '4. Governance quality, which the market is now visibly pricing into multiples.\n\n' +
+        '## Outlook\n' +
+        'The most useful discipline is **decomposition before belief**: split revenue growth into volume, gold price, mix and store additions before crediting it to demand; split a multiple into ROCE, growth premium and governance before calling it cheap or expensive. Watch whether the 15% duty holds, whether lab-grown moves export value as sharply as volume, and whether the regional champions can close the studded-mix gap.\n\n' +
+        '*This note is the capstone (Module 30) of the Gold & Jewellery sector course. Valuation multiples are a dated snapshot as of 15–16 September 2026.*',
+      createdAt: new Date(now - 1000 * 60 * 60 * 24 * 3).toISOString(),
+    },
+    {
+      id: uid(),
+      slug: 'jewellery-sector-kpi-framework',
+      title: 'The Jewellery KPI Framework: 12 Metrics and Who Actually Discloses Them',
+      sector: 'Gold & Jewellery',
+      company: 'Sector framework',
+      rating: 'Framework',
+      date: new Date(now - 1000 * 60 * 60 * 24 * 10).toISOString().slice(0, 10),
+      image: '',
+      access: 'public',
+      published: true,
+      summary:
+        'Fewer than half of the sector\'s key metrics are disclosed cleanly. Here is what each KPI tells you, which companies report it, and how the KPIs fit together.',
+      body:
+        '## The headline finding\n' +
+        'Balance-sheet and footprint KPIs — store count, studded mix, inventory days, gold exchange ratio, franchise contribution — are disclosed reasonably often. Shop-floor KPIs — footfalls, conversion, ticket size, revenue per store — are almost never disclosed, a genuine blind spot for outside analysts.\n\n' +
+        '## Reasonably disclosed\n' +
+        '- **Studded mix %** — the single best margin-quality proxy. Kalyan ~32% is highest among comparables; Senco ~11% lowest.\n' +
+        '- **Inventory days** — PNG fastest (~63 days); TBZ slowest (249 days, FY26).\n' +
+        '- **Store count** — Titan 3,603 group-wide. Growth without SSSG support is not quality growth.\n' +
+        '- **Gold exchange ratio** — a loyalty and working-capital signal, but also a near-term margin headwind at high levels.\n' +
+        '- **Franchise contribution** — store share can differ sharply from revenue share (Kalyan ~66% of stores FOCO vs ~49% of revenue).\n\n' +
+        '## Partial or mixed\n' +
+        '- **SSSG** — the cleanest proxy for organic health: Titan ~14%, Kalyan 22–45%+, Senco 24–34%.\n' +
+        '- **Gross margin** — Thangamayil has the cleanest quarterly series.\n' +
+        "- **Online sales %** — BlueStone's 6.66% despite a digital-first identity.\n\n" +
+        '## Genuine gaps\n' +
+        '- **Footfalls** and **conversion ratio** — no company discloses them.\n' +
+        '- **Ticket size** — only BlueStone discloses it.\n' +
+        '- **Revenue per store** — denominator mismatches make cross-company comparisons unreliable.\n\n' +
+        '## How the KPIs connect\n' +
+        'Footfalls × conversion = transactions; transactions × ticket size = revenue. Store count × revenue per store is a second path to revenue, with SSSG checking whether growth reflects existing-store health or just new stores. Studded mix and gross margin sit on top as the margin-quality layer.\n\n' +
+        '*From Module 24 — The Complete KPI Masterclass.*',
+      createdAt: new Date(now - 1000 * 60 * 60 * 24 * 10).toISOString(),
+    },
     {
       id: uid(),
       slug: 'png-jewellers-business-model-growth-outlook',
@@ -396,8 +456,8 @@ function buildSeed() {
     stats: [
       { value: '11', label: 'Core research modules' },
       { value: '27+', label: 'Hours of live instruction' },
-      { value: '10', label: 'Gold sector modules' },
-      { value: '1', label: 'Full research report you build' },
+      { value: '30', label: 'Gold sector modules' },
+      { value: '13', label: 'Listed-company deep-dives' },
     ],
     approach: [
       { title: 'Understand the business', body: 'Who pays, for what, and why they keep paying. Business model, value chain and moat.' },
@@ -416,7 +476,7 @@ function buildSeed() {
     faqs: [
       { q: 'Do I need a finance background?', a: 'No. Road Map to Equity Research starts from stock-market foundations and builds up to valuation and report writing. Basic comfort with Excel helps.' },
       { q: 'Are the sessions live or recorded?', a: 'Sessions are live on weekends, and recordings are available in your dashboard so you can revise or catch up.' },
-      { q: 'Which course should I take first?', a: 'Start with Road Map to Equity Research. The Gold & Jewellery sector course assumes you are comfortable with financial statements and basic valuation.' },
+      { q: 'Which course should I take first?', a: 'Start with Road Map to Equity Research. The 30-module Gold & Jewellery sector course assumes you are comfortable with financial statements and basic valuation.' },
       { q: 'How do I pay and get access?', a: 'Create an account and click Enrol on a course. We share payment details, and your course unlocks in your dashboard as soon as payment is confirmed.' },
       { q: 'Is this investment advice?', a: 'No. Vector is an education and research platform. Nothing we publish is a recommendation to buy or sell any security.' },
     ],
