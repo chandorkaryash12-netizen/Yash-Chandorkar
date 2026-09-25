@@ -211,7 +211,7 @@ function reports() {
         'A structural, multi-decade share-gain story, not just a cyclical wave. Organised retail has gone from ~5–10% of the market in 2000 to ~35–40% in FY25, while five comparable listed retailers trade across a ~9x–74x P/E range.',
       body:
         '## Executive summary\n' +
-        "India's organised gold jewellery retail sector is in the middle of a structural, multi-decade share-gain story. Organised retail's share of the market has moved from roughly 5–10% in 2000 to about 35–40% in FY25, with independent projections of 40–45% by 2028. The overall market grows at a nominal 8–10% a year; organised players inside it are compounding revenue at 15–35%+. Hallmarking, GST/KYC formalisation and brand trust are the engines behind that shift: and none of them are reversing.\n\n" +
+        "India's organised gold jewellery retail sector is in the middle of a structural, multi-decade share-gain story. Organised retail's share of the market has moved from roughly 5–10% in 2000 to about 35–40% in FY25, with projections of 40–45% by 2028. The overall market grows at a nominal 8–10% a year; organised players inside it are compounding revenue at 15–35%+. Hallmarking, GST/KYC formalisation and brand trust are the engines behind that shift: and none of them are reversing.\n\n" +
         '## The verdict\n' +
         '- **Structural call:** the organised-share-gain thesis is intact and accelerating: 13% (2010) → 29% (2018) → 35% (2023).\n' +
         '- **Cyclical caveat:** FY24–FY26 has been a volume recession dressed as a value boom. Jewellery volume fell to 563.4 tonnes in 2024 (−2%) while value rose 22%; by Q1 2026 investment demand overtook jewellery demand for the first time on record.\n' +
@@ -413,13 +413,13 @@ function buildSeed() {
       disclaimer:
         'Vector provides equity research education and sector research for informational and educational purposes only. Nothing on this website is investment advice or a recommendation to buy or sell any security. Please consult a SEBI-registered investment adviser before making investment decisions. Investments in securities markets are subject to market risks.',
       seoDescription:
-        'Vector Equity Research: learn equity research the way analysts do. Road Map to Equity Research and Gold & Jewellery sector expertise courses, plus independent sector research.',
+        'Vector Equity Research: learn equity research the way analysts do. Road Map to Equity Research and Gold & Jewellery sector expertise courses, plus sector research.',
     },
     content: {
       hero_eyebrow: '',
       hero_title: 'Research with direction. Invest with conviction.',
       hero_subtitle:
-        'Vector teaches you to analyse businesses the way institutional analysts do (industry, financials, management and valuation) and publishes independent sector research you can actually use.',
+        'Vector teaches you to analyse businesses the way institutional analysts do (industry, financials, management and valuation) and publishes sector research you can actually use.',
       hero_cta_primary: 'Explore Courses',
       hero_cta_secondary: 'Read Research',
       hero_image: '',
@@ -431,7 +431,7 @@ function buildSeed() {
       approach_subtitle: 'Every report we write and every class we teach follows the same seven-step research workflow.',
       research_eyebrow: 'Latest Research',
       research_title: 'Sector notes, company deep-dives and concall summaries.',
-      research_subtitle: 'Independent, process-driven research, with the working shown.',
+      research_subtitle: 'Process-driven research, with the working shown.',
       testimonials_title: 'What learners say',
       faq_title: 'Frequently asked questions',
       cta_title: 'Ready to think like an analyst?',
@@ -440,7 +440,7 @@ function buildSeed() {
       about_eyebrow: 'About Vector',
       about_title: 'Built by an analyst, for future analysts.',
       about_body:
-        'Vector is an independent equity research and training platform based in Mumbai, founded by Yash Chandorkar.\n\n' +
+        'Vector is an equity research and training platform based in Mumbai, founded by Yash Chandorkar.\n\n' +
         'Most learners get theory or tips, rarely the process. Vector teaches the full analyst workflow: understanding the business, studying the industry, decoding annual reports, investor presentations and concall transcripts, analysing financial statements, judging management, building valuations and writing the report.\n\n' +
         '## Research built on conviction\n' +
         'Our research combines numbers with **scuttlebutt**: meeting management teams, visiting plants and checking the story on the ground. That is the same process we teach, applied to real listed companies, starting with a 30-module deep dive into India\'s gold and jewellery sector.',
