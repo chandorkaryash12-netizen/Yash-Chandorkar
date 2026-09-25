@@ -42,15 +42,23 @@ Long text fields support simple formatting: `## Heading`, `- bullet`, `1. number
 
 Free courses (price 0) unlock instantly. You can also grant access directly from Admin → Users → Manage.
 
-## Deploying
+## Deploying on Render
 
-Any Node 18+ host works (Render, Railway, a VPS, etc.):
+This repo includes a `render.yaml` Blueprint.
 
-1. Set `NODE_ENV=production`, `SESSION_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`.
-2. Point `DATA_DIR` at a **persistent disk** — otherwise content edits and uploads are lost on redeploy.
-3. Serve over HTTPS (login cookies are `Secure` in production).
+1. Sign in at [render.com](https://render.com) with GitHub.
+2. **New → Blueprint**, pick this repository, and confirm.
+3. When asked, enter **ADMIN_EMAIL** and **ADMIN_PASSWORD** (your admin login). `SESSION_SECRET` is generated for you.
+4. Click **Apply**. After the build finishes, your site is live at `https://vector-equity-research.onrender.com` (the exact URL is shown in the dashboard).
+5. Optional: add your own domain under **Settings → Custom Domains**.
 
-Back up by downloading Admin → Dashboard → *download all site data*, or by copying the `data/` folder.
+Content and uploaded images are stored on the attached 1 GB disk (`/var/data`), so they survive redeploys. The Starter instance plus disk costs roughly US$7–8/month; free instances cannot keep a disk, so edits would be lost.
+
+Every push to `main` redeploys automatically. Back up by downloading Admin → Dashboard → *download all site data*.
+
+### Other hosts
+
+Any Node 18+ host works: set `NODE_ENV=production`, `SESSION_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, point `DATA_DIR` at a persistent disk, and serve over HTTPS.
 
 ## Project layout
 

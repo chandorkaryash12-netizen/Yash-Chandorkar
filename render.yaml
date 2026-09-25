@@ -1,0 +1,32 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# New → Blueprint → pick this repo. Render will ask for ADMIN_EMAIL and
+# ADMIN_PASSWORD; everything else is filled in automatically.
+services:
+  - type: web
+    name: vector-equity-research
+    runtime: node
+    plan: starter            # persistent disks need a paid instance
+    branch: main
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /robots.txt
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATA_DIR
+        value: /var/data
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_NAME
+        value: Yash Chandorkar
+    disk:
+      name: vector-data
+      mountPath: /var/data
+      sizeGB: 1
