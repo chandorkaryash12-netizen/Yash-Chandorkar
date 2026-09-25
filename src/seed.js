@@ -148,21 +148,21 @@ function goldCourse() {
     outcomes: [
       'Break down the Indian jewellery sector from first principles',
       'Decompose revenue growth into volume, gold price, mix and new stores',
-      'Explain why P/E multiples span ~9x to ~74x across comparable retailers',
+      'Explain why P/E multiples span roughly 9x to 74x across comparable retailers',
       'Read a jeweller\'s balance sheet: GML, hedging, inventory days, ROCE',
       'Underwrite retail and export/manufacturing names with the right framework',
       'Write and defend a complete sector research report',
     ],
     modules: [
-      m('Welcome to the ₹6+ Lakh Crore Sector Nobody Studies Properly', 'Market size, the organised/unorganised fault line, product mix, and why domestic retail and export manufacturing are different businesses.', ['India gold demand 802.8 t in 2024; jewellery 563.4 t (−2% volume, +22% value)', 'Organised (~35–40%) vs unorganised (~60–65%)', 'Gold vs diamond vs silver vs platinum', 'Branded vs local: why a brand commands a premium', 'Domestic retail vs export/manufacturing']),
+      m('Welcome to the ₹6+ Lakh Crore Sector Nobody Studies Properly', 'Market size, the organised/unorganised fault line, product mix, and why domestic retail and export manufacturing are different businesses.', ['India gold demand 802.8 t in 2024; jewellery 563.4 t (−2% volume, +22% value)', 'Organised (about 35–40%) vs unorganised (about 60–65%)', 'Gold vs diamond vs silver vs platinum', 'Branded vs local: why a brand commands a premium', 'Domestic retail vs export/manufacturing']),
       m('Market Structure: Who Owns the Indian Jewellery Shelf?', 'A national leader surrounded by regional fortresses.', ['Titan/Tanishq vs regional strongholds: Kalyan, Senco, PNG, Thangamayil', 'Market share and regional concentration', 'FOCO (franchise) vs COCO (company-owned) expansion playbooks', 'Online-first insurgents in daily-wear gold']),
       m('The Full Value Chain: Mining to Your Wardrobe', 'How gold moves through ten stages, and which ones are actually investable.', ['Mining and refining (MMTC-PAMP, LBMA)', 'Bullion import and trading', 'Gold Metal Loans: the most important stage', 'Manufacturing, diamond cutting, wholesalers', 'Retail chains, online D2C and old-gold recycling']),
-      m('Consumer Behaviour Part 1: Weddings, Festivals & the Indian Gold Psychology', 'Why a jeweller\'s year can be read off a religious calendar.', ['~50% of gold jewellery demand is wedding-related', 'Akshaya Tritiya, Dhanteras and the Oct–Feb wedding season', 'Q3 as the strongest quarter', 'Rural vs urban buying motives']),
+      m('Consumer Behaviour Part 1: Weddings, Festivals & the Indian Gold Psychology', 'Why a jeweller\'s year can be read off a religious calendar.', ['About 50% of gold jewellery demand is wedding-related', 'Akshaya Tritiya, Dhanteras and the Oct–Feb wedding season', 'Q3 as the strongest quarter', 'Rural vs urban buying motives']),
       m('Consumer Behaviour Part 2: The New Indian Buyer', 'Premiumisation, lightweight daily-wear and repeat customers.', ['Premiumisation and bigger branded tickets', 'Lightweight and daily-wear jewellery (CaratLane)', 'Men\'s jewellery and Gen Z behaviour', 'Old-gold exchange as a repeat-customer engine']),
       m('Product Categories: Gold, Diamond, Studded, Platinum, Silver & More', 'Why studded mix is the single most important number for margin quality.', ['Plain gold: the low-margin bread and butter', 'Studded and diamond jewellery margins', 'Platinum, silver and other categories', 'Making charges as the margin lever']),
       m('The Gold Market: Price, Imports & Supply Chain', 'Why gold price swings hit volume and value differently.', ['The two-sided impact of gold prices', 'Why India imports almost all its gold', 'How companies hedge price risk while holding inventory', 'Recycling and old-gold exchange reducing import dependence']),
       m('Gold Financing Mechanics: GML, Leasing & Hedging', 'How a jeweller funds gold inventory without blocking cash.', ['How a Gold Metal Loan works: bank lends gold, not cash', 'Lease rates and what financing really costs', 'Hedging so a price swing doesn\'t become a margin crisis', 'Phrases to watch in annual reports and concalls']),
-      m('Diamond Industry: Natural vs Lab-Grown', 'Same carbon, same sparkle. A pricing story turning the industry upside down.', ['India cuts and polishes ~90% of the world\'s diamonds', 'Rough-to-polished journey and pricing pressure', 'Lab-grown prices down ~85–90% since 2020', 'How Goldiam, Rajesh Exports, Renaissance Global and Asian Star are repositioning']),
+      m('Diamond Industry: Natural vs Lab-Grown', 'Same carbon, same sparkle. A pricing story turning the industry upside down.', ['India cuts and polishes about 90% of the world\'s diamonds', 'Rough-to-polished journey and pricing pressure', 'Lab-grown prices down about 85–90% since 2020', 'How Goldiam, Rajesh Exports, Renaissance Global and Asian Star are repositioning']),
       m('Manufacturing: From Karigar\'s Hands to Hallmarked Jewellery', 'Who actually makes India\'s jewellery, and where the profit sits.', ['The karigar ecosystem and Kolkata clusters', 'CAD design, casting and hand-finishing', 'Hallmarking and HUID', 'Making charges and automation']),
       m('Retail Business Model Part 1: Store Economics & SSSG', 'The metric that separates real demand from store-count arithmetic.', ['What it costs to open a store: capex and inventory', 'Breakeven timelines', 'Reading revenue per store correctly', 'Same-Store Sales Growth (SSSG)']),
       m('Retail Business Model Part 2: Expansion, Franchise Profitability & Store Payback', 'The maths of growing a store network.', ['Tier 1 saturation vs Tier 2/3 whitespace', 'Franchise economics: two P&Ls, one store', 'Store payback period', 'Inventory turns and store productivity']),
@@ -208,17 +208,17 @@ function reports() {
       access: 'members',
       published: true,
       summary:
-        'A structural, multi-decade share-gain story, not just a cyclical wave. Organised retail has gone from ~5–10% of the market in 2000 to ~35–40% in FY25, while five comparable listed retailers trade across a ~9x–74x P/E range.',
+        'A structural, multi-decade share-gain story, not just a cyclical wave. Organised retail has gone from roughly 5–10% of the market in 2000 to about 35–40% in FY25, while five comparable listed retailers trade across a 9x–74x P/E range.',
       body:
         '## Executive summary\n' +
         "India's organised gold jewellery retail sector is in the middle of a structural, multi-decade share-gain story. Organised retail's share of the market has moved from roughly 5–10% in 2000 to about 35–40% in FY25, with projections of 40–45% by 2028. The overall market grows at a nominal 8–10% a year; organised players inside it are compounding revenue at 15–35%+. Hallmarking, GST/KYC formalisation and brand trust are the engines behind that shift: and none of them are reversing.\n\n" +
         '## The verdict\n' +
         '- **Structural call:** the organised-share-gain thesis is intact and accelerating: 13% (2010) → 29% (2018) → 35% (2023).\n' +
         '- **Cyclical caveat:** FY24–FY26 has been a volume recession dressed as a value boom. Jewellery volume fell to 563.4 tonnes in 2024 (−2%) while value rose 22%; by Q1 2026 investment demand overtook jewellery demand for the first time on record.\n' +
-        '- **Dispersion is the opportunity:** on 15–16 September 2026, P/E ranged from Senco Gold ~9.6x to PC Jeweller ~16.2x, Thangamayil ~39x, Kalyan ~42.6x and Titan ~73.9x. Studded mix (high-20s to low-30s% at Titan/Kalyan vs ~10–11% at Senco, Thangamayil and PNG) explains most of the spread.\n' +
+        '- **Dispersion is the opportunity:** on 15–16 September 2026, P/E ranged from Senco Gold 9.6x to PC Jeweller 16.2x, Thangamayil 39x, Kalyan 42.6x and Titan 73.9x. Studded mix (high-20s to low-30s% at Titan/Kalyan vs 10–11% at Senco, Thangamayil and PNG) explains most of the spread.\n' +
         '- **Two businesses, two frameworks:** domestic retail and export/manufacturing run on different economics and must never be underwritten with the same checklist.\n\n' +
         '## Market structure\n' +
-        "India is the world's second-largest gold consumer. Total gold demand reached 802.8 tonnes in 2024 (₹5,15,390 crore). Beyond Titan's national footprint the market is a patchwork of regional fortresses: Kalyan (now ~69% of showrooms outside the South), Senco (80+ of 201 showrooms in West Bengal), PNG (Maharashtra), Thangamayil (all 66 stores in Tamil Nadu) and TBZ (37 stores). Titan holds ~20–22% of the organised segment vs Kalyan's ~7%.\n\n" +
+        "India is the world's second-largest gold consumer. Total gold demand reached 802.8 tonnes in 2024 (₹5,15,390 crore). Beyond Titan's national footprint the market is a patchwork of regional fortresses: Kalyan (now about 69% of showrooms outside the South), Senco (80+ of 201 showrooms in West Bengal), PNG (Maharashtra), Thangamayil (all 66 stores in Tamil Nadu) and TBZ (37 stores). Titan holds about 20–22% of the organised segment vs Kalyan's about 7%.\n\n" +
         '## Swing factors for the next 2–3 years\n' +
         '1. The gold import duty cycle: raised back to 15% in May 2026 after a cut to 6% in July 2024, the eighth change in fourteen years.\n' +
         '2. US tariffs on gems & jewellery exports.\n' +
@@ -246,13 +246,13 @@ function reports() {
         '## The headline finding\n' +
         'Balance-sheet and footprint KPIs (store count, studded mix, inventory days, gold exchange ratio, franchise contribution) are disclosed reasonably often. Shop-floor KPIs (footfalls, conversion, ticket size, revenue per store) are almost never disclosed, a genuine blind spot for outside analysts.\n\n' +
         '## Reasonably disclosed\n' +
-        '- **Studded mix %:** the single best margin-quality proxy. Kalyan ~32% is highest among comparables; Senco ~11% lowest.\n' +
-        '- **Inventory days:** PNG fastest (~63 days); TBZ slowest (249 days, FY26).\n' +
+        '- **Studded mix %:** the single best margin-quality proxy. Kalyan about 32% is highest among comparables; Senco about 11% lowest.\n' +
+        '- **Inventory days:** PNG fastest (about 63 days); TBZ slowest (249 days, FY26).\n' +
         '- **Store count:** Titan 3,603 group-wide. Growth without SSSG support is not quality growth.\n' +
         '- **Gold exchange ratio:** a loyalty and working-capital signal, but also a near-term margin headwind at high levels.\n' +
-        '- **Franchise contribution:** store share can differ sharply from revenue share (Kalyan ~66% of stores FOCO vs ~49% of revenue).\n\n' +
+        '- **Franchise contribution:** store share can differ sharply from revenue share (Kalyan about 66% of stores FOCO vs 49% of revenue).\n\n' +
         '## Partial or mixed\n' +
-        '- **SSSG:** the cleanest proxy for organic health (Titan ~14%, Kalyan 22–45%+, Senco 24–34%).\n' +
+        '- **SSSG:** the cleanest proxy for organic health (Titan about 14%, Kalyan 22–45%+, Senco 24–34%).\n' +
         '- **Gross margin:** Thangamayil has the cleanest quarterly series.\n' +
         "- **Online sales %:** BlueStone's 6.66% despite a digital-first identity.\n\n" +
         '## Genuine gaps\n' +
@@ -284,13 +284,13 @@ function reports() {
         '## Store network and operating scale\n' +
         '- Mix of company-owned and franchise stores; average store size 3,000–4,000 sq ft\n' +
         '- Roughly ₹61 crore revenue and ₹2.3 crore profit per store\n' +
-        '- Inventory turnover has moderated from ~5x toward ~3.2x as studded mix rises\n\n' +
+        '- Inventory turnover has moderated from about 5x toward 3.2x as studded mix rises\n\n' +
         '## Two store formats\n' +
-        '**Legacy stores** need about ₹50 crore including inventory and break even in roughly 15 months. **Lifestyle stores** (~1,500 sq ft, ~₹12 crore total investment, ~₹25 crore revenue target) break even in about 12 months with higher gross margins from diamond and studded jewellery.\n\n' +
+        '**Legacy stores** need about ₹50 crore including inventory and break even in roughly 15 months. **Lifestyle stores** (about 1,500 sq ft, ₹12 crore total investment, ₹25 crore revenue target) break even in about 12 months with higher gross margins from diamond and studded jewellery.\n\n' +
         '## The old-gold advantage\n' +
         'Wedding jewellery is 50–60% of sales, and nearly 80% of bridal purchases involve exchanging old gold. That lowers reliance on external gold procurement and gold metal loans.\n\n' +
         '## Growth drivers\n' +
-        '- Continued shift from unorganised to organised retail (organised share ~18% in 2017 → ~35–40% today)\n' +
+        '- Continued shift from unorganised to organised retail (organised share about 18% in 2017 → 35–40% today)\n' +
         '- Geographic expansion into Uttar Pradesh, Madhya Pradesh, Bihar and Chhattisgarh\n' +
         '- Higher studded penetration lifting margins\n' +
         '- Franchise model enabling capital-light growth\n\n' +
@@ -322,12 +322,12 @@ function reports() {
         '- Old-gold exchange became a major growth driver; studded demand improved on marketing campaigns\n' +
         '- Customers moving to lighter, 18K and 14K, wearable jewellery\n' +
         '- Margin pressure from a higher share of coins and plain gold; new "Hues" gemstone line and "beYon" lab-grown diamond stores\n' +
-        '- Management estimates ~50–60 bps market-share gain in FY26\n\n' +
+        '- Management estimates about 50–60 bps market-share gain in FY26\n\n' +
         '## Kalyan Jewellers\n' +
         '- FY26 revenue +43%, PAT +89%; Q4 revenue +66%\n' +
-        '- 129 showrooms added in FY26, ~150 planned for FY27, led by the FOCO model outside South India\n' +
+        '- 129 showrooms added in FY26, about 150 planned for FY27, led by the FOCO model outside South India\n' +
         '- Candere turned profitable with studded mix above 70%\n' +
-        '- Targeting a near debt-free (ex gold loans) position in FY27; India margin guided at ~5.5–5.6%\n\n' +
+        '- Targeting a near debt-free (ex gold loans) position in FY27; India margin guided at about 5.5–5.6%\n\n' +
         '## P N Gadgil Jewellers\n' +
         '- Crossed ₹10,000 crore revenue for the first time; revenue +40%, PAT +88%\n' +
         '- 25 stores added (78 total); non-Maharashtra share reached 10% via UP, Bihar and MP\n' +
@@ -337,7 +337,7 @@ function reports() {
         '- Growth from weddings, festive demand and high gold prices\n' +
         '- Deepening Tier-2/3 and rural Tamil Nadu presence; focus on saving schemes and exchange programmes\n\n' +
         '## BlueStone\n' +
-        '- 340 stores across 134 cities (65 added in FY26); studded mix ~55–60%\n' +
+        '- 340 stores across 134 cities (65 added in FY26); studded mix about 55–60%\n' +
         '- Redesigning to reduce gold weight; ad intensity down from 12% to 6% of sales with scale\n\n' +
         '## Our read\n' +
         'The common thread is affordability: in a high-gold-price year customers are protecting budgets through exchange, lighter karats and investment gold. That supports revenue but dilutes margins, so studded mix and hedging discipline are the KPIs to watch next quarter.',
