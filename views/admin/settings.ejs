@@ -37,7 +37,7 @@
     <div class="panel-head"><h2>Home page sections</h2><p class="small muted">Untick to hide a section.</p></div>
     <div class="toggles">
       <% Object.keys(site.sections).forEach(function (k) { %>
-        <label class="toggle"><input type="checkbox" name="section_<%= k %>" value="1" <%= site.sections[k] ? 'checked' : '' %>><span></span><%= { hero: 'Hero banner', stats: 'Highlight numbers', courses: 'Courses', approach: 'Method steps', research: 'Latest research', testimonials: 'Testimonials', faq: 'FAQ', cta: 'Call to action' }[k] || k %></label>
+        <label class="toggle"><input type="checkbox" name="section_<%= k %>" value="1" <%= site.sections[k] ? 'checked' : '' %>><span></span><%= { hero: 'Hero banner', stats: 'Highlight numbers', courses: 'Courses', approach: 'Method steps', research: 'Latest research', founder: 'Meet the analyst', testimonials: 'Testimonials', faq: 'FAQ', cta: 'Call to action' }[k] || k %></label>
       <% }) %>
     </div>
   </section>

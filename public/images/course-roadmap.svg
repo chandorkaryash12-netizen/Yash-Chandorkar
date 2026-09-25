@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <radialGradient id="g" cx="80%" cy="10%" r="80%"><stop offset="0" stop-color="#fdc107" stop-opacity=".35"/><stop offset=".6" stop-color="#fdc107" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g" cx="80%" cy="10%" r="80%"><stop offset="0" stop-color="#a78bfa" stop-opacity=".45"/><stop offset=".6" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".06"/></pattern>
   </defs>
-  <rect width="800" height="400" fill="#03221c"/>
+  <rect width="800" height="400" fill="#130e22"/>
   <rect width="800" height="400" fill="url(#grid)"/>
   <rect width="800" height="400" fill="url(#g)"/>
-  <g stroke="#fdc107" stroke-opacity=".35" stroke-width="2">
+  <g stroke="#a78bfa" stroke-opacity=".5" stroke-width="2">
     <line x1="120" y1="300" x2="120" y2="250"/><line x1="170" y1="290" x2="170" y2="230"/><line x1="220" y1="270" x2="220" y2="215"/>
     <line x1="270" y1="255" x2="270" y2="220"/><line x1="320" y1="240" x2="320" y2="180"/><line x1="370" y1="215" x2="370" y2="160"/>
   </g>
-  <g fill="#fdc107" fill-opacity=".35">
+  <g fill="#a78bfa" fill-opacity=".45">
     <rect x="112" y="262" width="16" height="30"/><rect x="162" y="242" width="16" height="38"/><rect x="212" y="228" width="16" height="30"/>
     <rect x="262" y="228" width="16" height="20"/><rect x="312" y="192" width="16" height="38"/><rect x="362" y="172" width="16" height="30"/>
   </g>
-  <path d="M60 340 C 220 330, 260 250, 400 240 S 600 150, 740 70" fill="none" stroke="#fdc107" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
-  <g fill="#03221c" stroke="#fdc107" stroke-width="4">
+  <path d="M60 340 C 220 330, 260 250, 400 240 S 600 150, 740 70" fill="none" stroke="#f4ab1a" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <g fill="#130e22" stroke="#f4ab1a" stroke-width="4">
     <circle cx="60" cy="340" r="11"/><circle cx="250" cy="290" r="11"/><circle cx="400" cy="240" r="11"/><circle cx="560" cy="170" r="11"/>
   </g>
-  <circle cx="740" cy="70" r="20" fill="#fdc107"/>
-  <path d="M731 70l6 6 12-13" fill="none" stroke="#03221c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="740" cy="70" r="20" fill="#f4ab1a"/>
+  <path d="M731 70l6 6 12-13" fill="none" stroke="#130e22" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <g font-family="Georgia, serif" fill="#fff" fill-opacity=".85" font-size="15" letter-spacing="2">
     <text x="42" y="375">FOUNDATIONS</text><text x="222" y="325">ANALYSIS</text><text x="372" y="275">VALUATION</text><text x="530" y="205">REPORT</text>
   </g>

@@ -1,11 +1,12 @@
-// Default brand theme (deep green + gold from the Vector emblem) and the
+// Default brand theme (violet-black, amber and lavender from the Vector emblem) and the
 // helpers that turn the saved theme into CSS variables + a Google Fonts URL.
 function seedTheme() {
   return {
-    primary: '#03221c',
-    accent: '#fdc107',
-    background: '#fbfaf5',
-    text: '#14201c',
+    primary: '#130e22',
+    accent: '#f4ab1a',
+    secondary: '#a78bfa',
+    background: '#f8f7fb',
+    text: '#1a1528',
     headingFont: 'Playfair Display',
     bodyFont: 'Inter',
     radius: 14,
@@ -29,6 +30,7 @@ function cssVars(theme) {
   return [
     `--primary:${color(t.primary, d.primary)}`,
     `--accent:${color(t.accent, d.accent)}`,
+    `--secondary:${color(t.secondary, d.secondary)}`,
     `--bg:${color(t.background, d.background)}`,
     `--text:${color(t.text, d.text)}`,
     `--radius:${Math.min(28, Math.max(0, Number(t.radius) || 0))}px`,

@@ -31,6 +31,12 @@ function load() {
     for (const key of Object.keys(seed.settings)) {
       if (state.settings[key] === undefined) state.settings[key] = seed.settings[key];
     }
+    for (const key of Object.keys(seed.settings.sections)) {
+      if (state.settings.sections[key] === undefined) state.settings.sections[key] = seed.settings.sections[key];
+    }
+    for (const key of Object.keys(seed.settings.theme)) {
+      if (state.settings.theme[key] === undefined) state.settings.theme[key] = seed.settings.theme[key];
+    }
   } else {
     state = buildSeed();
   }

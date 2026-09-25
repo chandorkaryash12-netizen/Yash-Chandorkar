@@ -83,6 +83,25 @@
 </section>
 <% } %>
 
+<% if (site.sections.founder && content.founder_name) { %>
+<section class="section section-tint">
+  <div class="container">
+    <div class="founder founder-home">
+      <div class="founder-photo">
+        <% if (content.founder_image) { %><img src="<%= content.founder_image %>" alt="<%= content.founder_name %>">
+        <% } else { %><span><%= content.founder_name.split(' ').map(function (p) { return p[0]; }).join('').slice(0, 2) %></span><% } %>
+      </div>
+      <div>
+        <span class="eyebrow"><%= content.founder_role %></span>
+        <h2><%= content.founder_name %></h2>
+        <div class="founder-bio"><%- h.formatText(content.founder_bio) %></div>
+        <a href="/about" class="btn btn-ghost btn-sm">About Vector →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<% } %>
+
 <% if (site.sections.testimonials && testimonials.length) { %>
 <section class="section section-dark">
   <div class="container">

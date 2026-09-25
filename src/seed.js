@@ -13,8 +13,8 @@ function roadmapCourse() {
     subtitle: 'From stock-market basics to a complete, institution-grade research report.',
     category: 'Core Programme',
     level: 'Beginner to Professional',
-    price: 14999,
-    originalPrice: 24999,
+    price: 677,
+    originalPrice: 0,
     duration: '11 live sessions · 2.5 hours each',
     schedule: 'Weekends — Saturday 8:00 PM–10:30 PM · Sunday 12:00 PM–2:30 PM',
     format: 'Live online cohort + recordings',
@@ -120,8 +120,8 @@ function goldCourse() {
     subtitle: 'The ₹6+ lakh crore sector nobody studies properly — 30 modules, 13 company deep-dives, one full sector report.',
     category: 'Sector Expertise',
     level: 'Intermediate to Advanced',
-    price: 9999,
-    originalPrice: 14999,
+    price: 999,
+    originalPrice: 0,
     duration: '30 modules · video lessons + deep-dive notes',
     schedule: 'Recorded video modules with laptop and mobile study notes — learn at your own pace',
     format: 'Video lessons + slide decks + deep-dive notes (laptop & mobile)',
@@ -390,10 +390,10 @@ function buildSeed() {
       favicon: '/images/favicon.png',
       theme: seedTheme(),
       contact: {
-        email: 'hello@vector-research.in',
+        email: 'chandorkaryash12@gmail.com',
         phone: '',
         whatsapp: '',
-        address: 'Pune, Maharashtra, India',
+        address: 'Mumbai, Maharashtra, India',
         hours: 'Mon–Sat · 10:00 AM – 7:00 PM IST',
       },
       social: { linkedin: '', instagram: '', youtube: '', twitter: '', telegram: '' },
@@ -403,6 +403,7 @@ function buildSeed() {
         courses: true,
         approach: true,
         research: true,
+        founder: true,
         testimonials: true,
         faq: true,
         cta: true,
@@ -439,15 +440,17 @@ function buildSeed() {
       about_eyebrow: 'About Vector',
       about_title: 'Built by an analyst, for future analysts.',
       about_body:
-        'Vector was founded by Yash Chandorkar to close the gap between classroom finance and the way equity research is actually done.\n\n' +
-        'Most learners get theory or tips — rarely the process. At Vector we teach the full workflow: understanding the business, studying the industry, decoding annual reports and concalls, analysing financial statements, judging management, building valuations and writing the report.\n\n' +
-        'Our sector research — starting with India\'s gold and jewellery industry — is built on the same process, so every learner sees the method applied to real companies.',
+        'Vector is an independent equity research and training platform based in Mumbai, founded by Yash Chandorkar.\n\n' +
+        'Most learners get theory or tips — rarely the process. Vector teaches the full analyst workflow: understanding the business, studying the industry, decoding annual reports, investor presentations and concall transcripts, analysing financial statements, judging management, building valuations and writing the report.\n\n' +
+        '## Research built on conviction\n' +
+        'Our research combines numbers with **scuttlebutt** — meeting management teams, visiting plants and checking the story on the ground. That is the same process we teach, applied to real listed companies, starting with a 30-module deep dive into India\'s gold and jewellery sector.',
       about_image: '',
       founder_name: 'Yash Chandorkar',
-      founder_role: 'Founder & Lead Analyst',
+      founder_role: 'Founder · Equity Research Analyst',
       founder_bio:
-        'Equity research analyst and educator focused on Indian consumer and jewellery sectors, company deep-dives and sell-side style report writing.',
-      founder_image: '',
+        'Equity research analyst with a PGDM in Finance from Oriental School of Business, Navi Mumbai, focused on fundamental and scuttlebutt-driven investing. Yash analyses companies through annual reports, investor presentations, concall transcripts and broker research, and turns that work into clear, actionable reports.\n\n' +
+        'He has met the management teams of 30+ listed companies — including Balu Forge, Deepak Fertilisers, Fino Payments Bank, Venus Pipes, Panchsheel Organics, JTL Industries, Ajmera Realty, Epigral, Intellect Design, Kalpataru, PDS, Gulf Oil, NIIT Learning, Cantabil Retail, NIIT and Karnataka Bank — and visited the manufacturing facilities of Pyramid Technoplast, Waaree Energies and BEW Engineering.',
+      founder_image: '/images/founder.jpg',
       mission_title: 'Our mission',
       mission_body: 'To make institution-grade equity research skills accessible to every serious student and investor in India.',
       contact_title: 'Get in touch',
@@ -455,7 +458,7 @@ function buildSeed() {
     },
     stats: [
       { value: '11', label: 'Core research modules' },
-      { value: '27+', label: 'Hours of live instruction' },
+      { value: '30+', label: 'Listed-company managements met' },
       { value: '30', label: 'Gold sector modules' },
       { value: '13', label: 'Listed-company deep-dives' },
     ],
@@ -464,7 +467,7 @@ function buildSeed() {
       { title: 'Study the industry', body: 'Size, structure, Porter\'s Five Forces, regulation — and whether it is cyclical or structural.' },
       { title: 'Read the source', body: 'Annual reports, concall transcripts and investor presentations — read like an investigator.' },
       { title: 'Analyse the numbers', body: 'P&L, balance sheet, cash flow, working capital and ratios — direction before decimals.' },
-      { title: 'Judge management', body: 'Track record, governance, capital allocation and promoter behaviour.' },
+      { title: 'Meet management', body: 'Track record, governance and capital allocation — checked in person through management meetings and plant visits.' },
       { title: 'Value it properly', body: 'DCF, EV/EBITDA, P/E — the right method for the right sector, with a margin of safety.' },
       { title: 'Write the thesis', body: 'A clear Buy / Hold / Sell call with drivers, risks and what would change our mind.' },
     ],

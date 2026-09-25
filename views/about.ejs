@@ -27,7 +27,7 @@
       <div>
         <span class="eyebrow"><%= content.founder_role %></span>
         <h2><%= content.founder_name %></h2>
-        <p><%= content.founder_bio %></p>
+        <div class="founder-bio"><%- h.formatText(content.founder_bio) %></div>
       </div>
     </div>
   </div>

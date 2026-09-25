@@ -176,6 +176,7 @@ router.post('/theme', (req, res) => {
     const color = (v, fallback) => (/^#[0-9a-f]{6}$/i.test(v) ? v : fallback);
     t.primary = color(req.body.primary, t.primary);
     t.accent = color(req.body.accent, t.accent);
+    t.secondary = color(req.body.secondary, t.secondary || '#a78bfa');
     t.background = color(req.body.background, t.background);
     t.text = color(req.body.text, t.text);
     if (FONTS.heading.includes(req.body.headingFont)) t.headingFont = req.body.headingFont;
