@@ -92,6 +92,18 @@ function ensureAdmin() {
   }
 }
 
+// Plain-language hint for the most common MongoDB Atlas setup mistakes.
+function mongoHint(err) {
+  const m = String(err && err.message || '');
+  const uri = process.env.MONGODB_URI || '';
+  if (/<db_password>|<password>/i.test(uri)) return 'MONGODB_URI still contains <db_password>. Replace it (and the < >) with your database user password.';
+  if (!/^mongodb(\+srv)?:\/\//.test(uri)) return 'MONGODB_URI must start with mongodb+srv:// . Copy it again from Atlas > Connect > Drivers.';
+  if (/auth|authentication|bad auth/i.test(m)) return 'Wrong database username or password. In Atlas > Database Access, check the user (or reset its password) and update MONGODB_URI.';
+  if (/querySrv|ENOTFOUND|EBADNAME|Invalid URI|URI must/i.test(m)) return 'The cluster address in MONGODB_URI is wrong or has a typo. Copy it again from Atlas > Connect > Drivers.';
+  if (/timed out|Server selection|ECONNREFUSED|whitelist|IP/i.test(m)) return 'Atlas is blocking the connection. In Atlas > Network Access, add 0.0.0.0/0 (Allow access from anywhere).';
+  return 'Check MONGODB_URI in Render > Environment against Atlas > Connect > Drivers.';
+}
+
 async function start() {
   if (cloud.enabled) {
     // Free hosts wipe local files on restart: pull the saved copy first.
@@ -114,6 +126,7 @@ async function start() {
 if (require.main === module) {
   start().catch((err) => {
     console.error('Could not start Vector:', err.message);
+    if (cloud.enabled) console.error('MongoDB help: ' + mongoHint(err));
     process.exit(1);
   });
 }
