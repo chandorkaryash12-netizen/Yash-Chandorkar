@@ -69,7 +69,7 @@
   var preview = document.querySelector('[data-theme-preview]');
   if (preview) {
     var root = document.documentElement;
-    var map = { primary: '--primary', accent: '--accent', secondary: '--secondary', background: '--bg', text: '--text' };
+    var map = { primary: '--primary', accent: '--accent', secondary: '--secondary', heading: '--heading', background: '--bg', text: '--text' };
     document.querySelectorAll('[data-theme-var]').forEach(function (input) {
       input.addEventListener('input', function () {
         root.style.setProperty(map[input.getAttribute('data-theme-var')], input.value);

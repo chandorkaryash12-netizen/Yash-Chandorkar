@@ -4,10 +4,10 @@
   <div class="admin-cols">
     <section class="panel">
       <div class="panel-head"><h2>Colours</h2></div>
-      <% [['primary', 'Primary (headers, buttons, footer)'], ['accent', 'Accent (buttons, prices, call-to-action)'], ['secondary', 'Secondary (labels, highlights, glows)'], ['background', 'Page background'], ['text', 'Body text']].forEach(function (c) { %>
+      <% [['primary', 'Primary (header, dark sections, footer)'], ['accent', 'Buttons'], ['secondary', 'Highlights (labels, links, accents)'], ['heading', 'Headings'], ['background', 'Page background'], ['text', 'Body text']].forEach(function (c) { %>
         <label class="color-field"><span><%= c[1] %></span><span class="color-inputs"><input type="color" name="<%= c[0] %>" value="<%= site.theme[c[0]] %>" data-theme-var="<%= c[0] %>"><code><%= site.theme[c[0]] %></code></span></label>
       <% }) %>
-      <p class="small muted">Vector brand: primary <code>#17191d</code>, accent <code>#e2e5e9</code>, secondary <code>#aab3be</code>.</p>
+      <p class="small muted">Vector brand: deep navy <code>#0b132b</code>, royal purple <code>#6b4ab6</code>, headings <code>#171717</code>, background <code>#f7f7f5</code>.</p>
     </section>
     <section class="panel">
       <div class="panel-head"><h2>Typography & shape</h2></div>
