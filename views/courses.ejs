@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { eyebrow: content.courses_eyebrow, heading: content.courses_title, sub: content.courses_subtitle }) %>
+<section class="section">
+  <div class="container">
+    <% if (!courses.length) { %>
+      <p class="empty">New courses are coming soon.</p>
+    <% } else { %>
+      <div class="course-grid"><% courses.forEach(function (c) { %><%- include('partials/course-card', { c: c }) %><% }) %></div>
+    <% } %>
+  </div>
+</section>
+<%- include('partials/cta') %>
+<%- include('partials/footer') %>

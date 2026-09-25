@@ -1,0 +1,43 @@
+<%- include('_top') %>
+<div class="toolbar"><a href="/admin/research" class="back-link-dark">← All research</a><% if (!isNew) { %><a href="/research/<%= report.slug %>" target="_blank" class="btn btn-ghost btn-sm">View on site ↗</a><% } %></div>
+<form method="post" action="/admin/research/<%= isNew ? 'new' : report.id %>" enctype="multipart/form-data" class="admin-form">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <div class="admin-cols admin-cols-main">
+    <div>
+      <section class="panel">
+        <label>Title<input name="title" required value="<%= report.title || '' %>"></label>
+        <label>Summary (shown on cards and above the report)<textarea name="summary" rows="3"><%= report.summary || '' %></textarea></label>
+        <label>Report body <span class="opt">(## headings, - bullets, 1. numbered, **bold**, [link](https://…))</span><textarea name="body" rows="26"><%= report.body || '' %></textarea></label>
+      </section>
+    </div>
+    <div>
+      <section class="panel">
+        <div class="panel-head"><h2>Publish</h2></div>
+        <label class="toggle"><input type="checkbox" name="published" value="1" <%= report.published ? 'checked' : '' %>><span></span>Published</label>
+        <label>Access<select name="access"><option value="public" <%= report.access !== 'members' ? 'selected' : '' %>>Public — anyone can read</option><option value="members" <%= report.access === 'members' ? 'selected' : '' %>>Members — login required</option></select></label>
+        <label>Date<input type="date" name="date" value="<%= report.date || '' %>"></label>
+        <label>URL slug<input name="slug" value="<%= report.slug || '' %>" placeholder="auto from title"></label>
+        <button class="btn btn-accent btn-block">Save report</button>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Classification</h2></div>
+        <label>Sector<input name="sector" value="<%= report.sector || '' %>" placeholder="Gold & Jewellery"></label>
+        <label>Company / coverage<input name="company" value="<%= report.company || '' %>"></label>
+        <label>Label / rating<input name="rating" value="<%= report.rating || '' %>" placeholder="Initiating Coverage, Sector Update…"></label>
+        <label>PDF link (optional)<input name="pdfUrl" value="<%= report.pdfUrl || '' %>" placeholder="https://…"></label>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Cover image</h2></div>
+        <%- include('_image-field', { name: 'image', label: 'Optional', value: report.image || '' }) %>
+      </section>
+    </div>
+  </div>
+</form>
+<% if (!isNew) { %>
+  <form method="post" action="/admin/research/<%= report.id %>/delete" class="danger-zone">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div><strong>Delete this report</strong><p class="small muted">This cannot be undone.</p></div>
+    <button class="btn btn-danger btn-sm" data-confirm="Delete this report?">Delete report</button>
+  </form>
+<% } %>
+<%- include('_bottom') %>

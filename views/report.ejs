@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<article>
+  <header class="page-hero report-hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <a href="/research" class="back-link">← All research</a>
+      <div class="report-tags">
+        <span class="chip chip-accent"><%= report.sector %></span>
+        <% if (report.rating) { %><span class="chip chip-outline"><%= report.rating %></span><% } %>
+        <% if (report.access === 'members') { %><span class="chip chip-outline">Members</span><% } %>
+      </div>
+      <h1><%= report.title %></h1>
+      <p class="report-byline"><%= report.company %> · <%= h.formatDate(report.date) %></p>
+    </div>
+  </header>
+  <div class="section">
+    <div class="container narrow">
+      <% if (report.image) { %><img class="report-cover" src="<%= report.image %>" alt=""><% } %>
+      <p class="report-summary"><%= report.summary %></p>
+      <% if (locked) { %>
+        <div class="lock-card">
+          <img src="<%= site.logo %>" alt="" width="56" height="56">
+          <h2>Members-only research</h2>
+          <p>Create a free Vector account to read the full report.</p>
+          <div class="lock-actions">
+            <a href="/signup" class="btn btn-accent">Create free account</a>
+            <a href="/login" class="btn btn-ghost">Log in</a>
+          </div>
+        </div>
+      <% } else { %>
+        <div class="prose"><%- h.formatText(report.body) %></div>
+        <% if (report.pdfUrl) { %><p><a href="<%= report.pdfUrl %>" class="btn btn-primary" target="_blank" rel="noopener">Download full report (PDF)</a></p><% } %>
+      <% } %>
+      <p class="disclaimer-inline"><strong>Disclaimer:</strong> <%= site.disclaimer %></p>
+    </div>
+  </div>
+</article>
+<% if (more.length) { %>
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head"><h2>More research</h2></div>
+    <div class="report-grid"><% more.forEach(function (r) { %><%- include('partials/report-card', { r: r }) %><% }) %></div>
+  </div>
+</section>
+<% } %>
+<%- include('partials/footer') %>

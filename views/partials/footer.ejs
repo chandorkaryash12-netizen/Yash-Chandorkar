@@ -1,0 +1,48 @@
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-light" href="/">
+        <img src="<%= site.logo %>" alt="" width="48" height="48">
+        <span class="brand-text"><strong><%= site.siteName %></strong><small><%= site.tagline %></small></span>
+      </a>
+      <p><%= content.mission_body %></p>
+      <div class="social">
+        <% Object.keys(site.social || {}).forEach(function (k) { if (site.social[k]) { %>
+          <a href="<%= site.social[k] %>" target="_blank" rel="noopener" aria-label="<%= k %>"><%- include('icon', { name: k }) %></a>
+        <% } }) %>
+      </div>
+    </div>
+    <div>
+      <h4>Courses</h4>
+      <% navCourses.forEach(function (c) { %><a href="/courses/<%= c.slug %>"><%= c.title %></a><% }) %>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="/research">Research</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <% if (site.contact.email) { %><a href="mailto:<%= site.contact.email %>"><%= site.contact.email %></a><% } %>
+      <% if (site.contact.phone) { %><a href="tel:<%= site.contact.phone.replace(/\s/g, '') %>"><%= site.contact.phone %></a><% } %>
+      <% if (site.contact.address) { %><span><%= site.contact.address %></span><% } %>
+      <% if (site.contact.hours) { %><span class="muted-light"><%= site.contact.hours %></span><% } %>
+    </div>
+  </div>
+  <div class="container footer-legal">
+    <p class="disclaimer-text"><%= site.disclaimer %></p>
+    <div class="footer-bottom">
+      <span>© <%= new Date().getFullYear() %> <%= site.siteName %> <%= site.tagline %>. All rights reserved.</span>
+      <a href="/admin/login">Admin</a>
+    </div>
+  </div>
+</footer>
+<% if (site.contact.whatsapp) { %>
+<a class="whatsapp-fab" href="https://wa.me/<%= site.contact.whatsapp.replace(/[^0-9]/g, '') %>" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><%- include('icon', { name: 'whatsapp' }) %></a>
+<% } %>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

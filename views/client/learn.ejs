@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+<section class="dash-hero">
+  <div class="container">
+    <a href="/dashboard" class="back-link">← My dashboard</a>
+    <span class="eyebrow eyebrow-light"><%= course.category %></span>
+    <h1><%= course.title %></h1>
+    <p class="lead"><%= course.schedule %></p>
+  </div>
+</section>
+<section class="section">
+  <div class="container course-layout">
+    <div class="course-main">
+      <h2 class="block-title">Course modules</h2>
+      <div class="curriculum">
+        <% course.modules.forEach(function (m, i) { %>
+          <details <%= i === 0 ? 'open' : '' %>>
+            <summary><span class="mod-num">Module <%= i + 1 %></span><span class="mod-title"><%= m.title %></span></summary>
+            <div class="mod-body">
+              <% if (m.summary) { %><p><%= m.summary %></p><% } %>
+              <% if (m.topics.length) { %><ul><% m.topics.forEach(function (t) { %><li><%= t %></li><% }) %></ul><% } %>
+            </div>
+          </details>
+        <% }) %>
+      </div>
+    </div>
+    <aside class="course-side">
+      <div class="side-card">
+        <h3>Materials & recordings</h3>
+        <% if (course.materials && course.materials.length) { %>
+          <ul class="plain-list">
+            <% course.materials.forEach(function (m) { %>
+              <li><% if (m.url) { %><a href="<%= m.url %>" target="_blank" rel="noopener"><%= m.title %> ↗</a><% } else { %><%= m.title %><% } %></li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p class="small muted">Session links, recordings and workbooks will appear here as the cohort progresses.</p>
+        <% } %>
+      </div>
+      <% if (course.outcomes && course.outcomes.length) { %>
+        <div class="side-card"><h3>Outcomes</h3><ul class="checks small"><% course.outcomes.forEach(function (x) { %><li><%= x %></li><% }) %></ul></div>
+      <% } %>
+    </aside>
+  </div>
+</section>
+<%- include('../partials/footer') %>

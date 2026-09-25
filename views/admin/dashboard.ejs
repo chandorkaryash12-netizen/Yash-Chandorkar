@@ -1,0 +1,53 @@
+<%- include('_top') %>
+<% if (usingDefaultAdmin) { %>
+  <div class="flash flash-info"><span>You are using the auto-generated admin password. <a href="/admin/account">Set your own email and password</a> to secure the account.</span></div>
+<% } %>
+<div class="kpis">
+  <div class="kpi"><span>Clients</span><strong><%= counts.clients %></strong><a href="/admin/users?role=client">Manage →</a></div>
+  <div class="kpi"><span>Active enrolments</span><strong><%= counts.active %></strong><a href="/admin/enrollments?status=active">View →</a></div>
+  <div class="kpi kpi-accent"><span>Pending approvals</span><strong><%= counts.pending %></strong><a href="/admin/enrollments?status=pending">Review →</a></div>
+  <div class="kpi"><span>Enrolment value</span><strong><%= h.formatINR(counts.revenue).replace('Free', '₹0') %></strong><span class="small muted">active × course price</span></div>
+  <div class="kpi"><span>Courses · Reports</span><strong><%= counts.courses %> · <%= counts.reports %></strong><a href="/admin/courses">Edit →</a></div>
+  <div class="kpi"><span>Unread messages</span><strong><%= counts.unread %></strong><a href="/admin/messages">Open inbox →</a></div>
+</div>
+
+<div class="admin-cols">
+  <section class="panel">
+    <div class="panel-head"><h2>Pending enrolments</h2><a href="/admin/enrollments?status=pending">All →</a></div>
+    <% if (!pending.length) { %><p class="muted">Nothing waiting. 🎉</p><% } %>
+    <table class="table"><tbody>
+      <% pending.forEach(function (e) { %>
+        <tr>
+          <td><strong><%= e.user ? e.user.name : 'Deleted user' %></strong><br><span class="small muted"><%= e.user ? e.user.email : '' %></span></td>
+          <td><%= e.course ? e.course.title : '—' %><br><span class="small muted"><%= h.formatDate(e.createdAt) %></span></td>
+          <td class="actions">
+            <form method="post" action="/admin/enrollments/<%= e.id %>/status"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="status" value="active"><button class="btn btn-accent btn-xs">Approve</button></form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody></table>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Quick edits</h2></div>
+    <div class="quick">
+      <a href="/admin/content">✎ Edit homepage text & images</a>
+      <a href="/admin/courses">▤ Edit courses & pricing</a>
+      <a href="/admin/research/new">＋ Publish new research</a>
+      <a href="/admin/theme">◐ Change colours & fonts</a>
+      <a href="/admin/media">▣ Upload images</a>
+      <a href="/admin/settings">⚙ Contact details & sections</a>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>New clients</h2><a href="/admin/users">All →</a></div>
+    <% if (!recentClients.length) { %><p class="muted">No client sign-ups yet.</p><% } %>
+    <ul class="plain-list"><% recentClients.forEach(function (u) { %><li><strong><%= u.name %></strong> <span class="small muted"><%= u.email %> · <%= h.formatDate(u.createdAt) %></span></li><% }) %></ul>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Latest messages</h2><a href="/admin/messages">Inbox →</a></div>
+    <% if (!messages.length) { %><p class="muted">No messages yet.</p><% } %>
+    <ul class="plain-list"><% messages.forEach(function (m) { %><li><% if (!m.read) { %><span class="dot"></span><% } %><strong><%= m.name %></strong> — <%= m.subject %><br><span class="small muted"><%= m.message.slice(0, 90) %><%= m.message.length > 90 ? '…' : '' %></span></li><% }) %></ul>
+  </section>
+</div>
+<p class="small muted">Backup: <a href="/admin/backup">download all site data (JSON)</a>. Passwords are not included.</p>
+<%- include('_bottom') %>

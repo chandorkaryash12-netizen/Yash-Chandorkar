@@ -1,0 +1,21 @@
+<%- include('_top') %>
+<p class="intro">Messages sent through the contact form.</p>
+<% if (!messages.length) { %><p class="muted">Inbox is empty.</p><% } %>
+<div class="messages">
+  <% messages.forEach(function (m) { %>
+    <article class="panel message <%= m.read ? '' : 'unread' %>">
+      <header>
+        <div><strong><%= m.name %></strong> <span class="small muted">&lt;<a href="mailto:<%= m.email %>?subject=Re: <%= encodeURIComponent(m.subject) %>"><%= m.email %></a>&gt;<% if (m.phone) { %> · <%= m.phone %><% } %></span></div>
+        <span class="small muted"><%= h.formatDate(m.createdAt) %></span>
+      </header>
+      <p class="chip"><%= m.subject %></p>
+      <p class="message-body"><%= m.message %></p>
+      <div class="actions">
+        <a class="btn btn-primary btn-xs" href="mailto:<%= m.email %>?subject=Re: <%= encodeURIComponent(m.subject) %>">Reply by email</a>
+        <form method="post" action="/admin/messages/<%= m.id %>/read"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="btn btn-ghost btn-xs"><%= m.read ? 'Mark unread' : 'Mark read' %></button></form>
+        <form method="post" action="/admin/messages/<%= m.id %>/delete"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="btn btn-danger btn-xs" data-confirm="Delete this message?">Delete</button></form>
+      </div>
+    </article>
+  <% }) %>
+</div>
+<%- include('_bottom') %>

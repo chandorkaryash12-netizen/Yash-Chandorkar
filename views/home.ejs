@@ -1,0 +1,113 @@
+<%- include('partials/header') %>
+
+<% if (site.sections.hero) { %>
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow eyebrow-light"><%= content.hero_eyebrow %></span>
+      <h1><%= content.hero_title %></h1>
+      <p class="lead"><%= content.hero_subtitle %></p>
+      <div class="hero-actions">
+        <a href="/courses" class="btn btn-accent btn-lg"><%= content.hero_cta_primary %></a>
+        <a href="/research" class="btn btn-outline-light btn-lg"><%= content.hero_cta_secondary %></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <% if (content.hero_image) { %>
+        <img class="hero-photo" src="<%= content.hero_image %>" alt="">
+      <% } else { %>
+        <div class="emblem-wrap"><img src="<%= site.logo %>" alt="<%= site.siteName %> emblem" class="emblem"></div>
+      <% } %>
+    </div>
+  </div>
+  <% if (site.sections.stats && stats.length) { %>
+  <div class="container">
+    <div class="stats">
+      <% stats.forEach(function (s) { %>
+        <div class="stat"><strong><%= s.value %></strong><span><%= s.label %></span></div>
+      <% }) %>
+    </div>
+  </div>
+  <% } %>
+</section>
+<% } %>
+
+<% if (site.sections.courses && courses.length) { %>
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><%= content.courses_eyebrow %></span>
+      <h2><%= content.courses_title %></h2>
+      <p><%= content.courses_subtitle %></p>
+    </div>
+    <div class="course-grid">
+      <% courses.forEach(function (c) { %><%- include('partials/course-card', { c: c }) %><% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<% if (site.sections.approach && approach.length) { %>
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><%= content.approach_eyebrow %></span>
+      <h2><%= content.approach_title %></h2>
+      <p><%= content.approach_subtitle %></p>
+    </div>
+    <ol class="steps">
+      <% approach.forEach(function (s, i) { %>
+        <li class="step"><span class="step-num"><%= String(i + 1).padStart(2, '0') %></span><h3><%= s.title %></h3><p><%= s.body %></p></li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+<% } %>
+
+<% if (site.sections.research && reports.length) { %>
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div>
+        <span class="eyebrow"><%= content.research_eyebrow %></span>
+        <h2><%= content.research_title %></h2>
+        <p><%= content.research_subtitle %></p>
+      </div>
+      <a href="/research" class="btn btn-ghost">All research →</a>
+    </div>
+    <div class="report-grid">
+      <% reports.forEach(function (r) { %><%- include('partials/report-card', { r: r }) %><% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<% if (site.sections.testimonials && testimonials.length) { %>
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head"><h2><%= content.testimonials_title %></h2></div>
+    <div class="quote-grid">
+      <% testimonials.forEach(function (t) { %>
+        <figure class="quote">
+          <blockquote>“<%= t.quote %>”</blockquote>
+          <figcaption><strong><%= t.name %></strong><span><%= t.role %></span></figcaption>
+        </figure>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<% if (site.sections.faq && faqs.length) { %>
+<section class="section">
+  <div class="container narrow">
+    <div class="section-head"><h2><%= content.faq_title %></h2></div>
+    <%- include('partials/faq', { faqs: faqs }) %>
+  </div>
+</section>
+<% } %>
+
+<% if (site.sections.cta) { %><%- include('partials/cta') %><% } %>
+
+<%- include('partials/footer') %>

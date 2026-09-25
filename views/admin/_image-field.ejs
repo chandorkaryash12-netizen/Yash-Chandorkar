@@ -1,0 +1,11 @@
+<div class="image-field">
+  <span class="label"><%= label %></span>
+  <div class="image-field-row">
+    <div class="image-preview" data-preview="<%= name %>"><% if (value) { %><img src="<%= value %>" alt=""><% } else { %><span>No image</span><% } %></div>
+    <div class="image-inputs">
+      <input type="file" name="<%= name %>" accept="image/*" data-preview-input="<%= name %>">
+      <input type="text" name="<%= name %>__url" value="<%= value %>" placeholder="…or paste an image URL from the Media library">
+      <% if (value) { %><label class="check small"><input type="checkbox" name="<%= name %>__remove" value="1"> Remove image</label><% } %>
+    </div>
+  </div>
+</div>

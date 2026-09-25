@@ -1,0 +1,14 @@
+<%- include('_top') %>
+<form method="post" action="/admin/account" class="panel admin-form narrow-panel">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <div class="panel-head"><h2>Login details</h2></div>
+  <label>Name<input name="name" value="<%= currentUser.name %>"></label>
+  <label>Login email<input type="email" name="email" required value="<%= currentUser.email %>"></label>
+  <div class="form-row">
+    <label>New password <span class="opt">(leave blank to keep)</span><input type="password" name="password" minlength="8" autocomplete="new-password"></label>
+    <label>Confirm new password<input type="password" name="confirm" autocomplete="new-password"></label>
+  </div>
+  <label>Current password (required to save)<input type="password" name="current" required autocomplete="current-password"></label>
+  <button class="btn btn-accent">Update account</button>
+</form>
+<%- include('_bottom') %>

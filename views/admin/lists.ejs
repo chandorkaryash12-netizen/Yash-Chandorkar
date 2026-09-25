@@ -1,0 +1,34 @@
+<%- include('_top') %>
+<p class="intro">Add, remove and reorder repeating items. Use the arrows to reorder, × to remove, and <em>Add item</em> for new rows. Show or hide whole sections in <a href="/admin/settings#sections">Settings</a>.</p>
+<% Object.keys(lists).forEach(function (name) { var def = lists[name]; var items = values[name] || []; %>
+  <section class="panel" id="<%= name %>">
+    <div class="panel-head"><div><h2><%= def.label %></h2><p class="small muted"><%= def.help %></p></div></div>
+    <form method="post" action="/admin/lists/<%= name %>" class="repeater" data-repeater>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <div class="rows" data-rows>
+        <% (items.length ? items : [{}]).forEach(function (item) { %>
+          <div class="rep-row" data-row>
+            <div class="rep-fields">
+              <% def.fields.forEach(function (f) { %>
+                <label class="<%= f.type === 'textarea' ? 'wide' : '' %>"><%= f.label %>
+                  <% if (f.type === 'textarea') { %><textarea name="<%= f.key %>" rows="2"><%= item[f.key] || '' %></textarea>
+                  <% } else { %><input name="<%= f.key %>" value="<%= item[f.key] || '' %>"><% } %>
+                </label>
+              <% }) %>
+            </div>
+            <div class="rep-tools">
+              <button type="button" data-up title="Move up">↑</button>
+              <button type="button" data-down title="Move down">↓</button>
+              <button type="button" data-remove title="Remove">×</button>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      <div class="rep-actions">
+        <button type="button" class="btn btn-ghost btn-sm" data-add>+ Add item</button>
+        <button class="btn btn-accent btn-sm">Save <%= def.label.toLowerCase() %></button>
+      </div>
+    </form>
+  </section>
+<% }) %>
+<%- include('_bottom') %>

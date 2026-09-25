@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { eyebrow: content.research_eyebrow, heading: content.research_title, sub: content.research_subtitle }) %>
+<section class="section">
+  <div class="container">
+    <% if (sectors.length > 1) { %>
+      <div class="filters">
+        <a href="/research" class="pill <%= !sector ? 'active' : '' %>">All</a>
+        <% sectors.forEach(function (s) { %><a href="/research?sector=<%= encodeURIComponent(s) %>" class="pill <%= sector === s ? 'active' : '' %>"><%= s %></a><% }) %>
+      </div>
+    <% } %>
+    <% if (!reports.length) { %>
+      <p class="empty">No research published yet.</p>
+    <% } else { %>
+      <div class="report-grid"><% reports.forEach(function (r) { %><%- include('partials/report-card', { r: r }) %><% }) %></div>
+    <% } %>
+  </div>
+</section>
+<%- include('partials/footer') %>

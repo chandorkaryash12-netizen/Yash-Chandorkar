@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= typeof title !== 'undefined' && title ? title + ' · ' + site.siteName + ' ' + site.tagline : site.siteName + ' · ' + site.tagline %></title>
+  <meta name="description" content="<%= site.seoDescription %>">
+  <meta property="og:title" content="<%= typeof title !== 'undefined' && title ? title : site.siteName + ' ' + site.tagline %>">
+  <meta property="og:description" content="<%= site.seoDescription %>">
+  <meta property="og:image" content="<%= site.logo %>">
+  <meta name="theme-color" content="<%= site.theme.primary %>">
+  <link rel="icon" href="<%= site.favicon %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="<%= fontsUrl %>">
+  <link rel="stylesheet" href="/css/style.css">
+  <% if (typeof layout !== 'undefined' && layout === 'admin') { %><link rel="stylesheet" href="/css/admin.css"><% } %>
+  <style>:root{<%- themeCss %>}</style>
+</head>
+<body class="<%= typeof bodyClass !== 'undefined' ? bodyClass : '' %>">

@@ -1,0 +1,61 @@
+<%- include('_top') %>
+<div class="toolbar">
+  <form class="search" method="get">
+    <input name="q" value="<%= q %>" placeholder="Search name or email">
+    <select name="role"><option value="">All roles</option><option value="client" <%= role === 'client' ? 'selected' : '' %>>Clients</option><option value="admin" <%= role === 'admin' ? 'selected' : '' %>>Admins</option></select>
+    <button class="btn btn-ghost btn-sm">Filter</button>
+  </form>
+  <button class="btn btn-accent" data-open="new-user">+ Add user</button>
+</div>
+<form method="post" action="/admin/users" class="panel hidden" id="new-user">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <div class="panel-head"><h2>Add user</h2></div>
+  <div class="form-row form-row-3">
+    <label>Name<input name="name" required></label>
+    <label>Email<input type="email" name="email" required></label>
+    <label>Phone<input name="phone"></label>
+    <label>Temporary password<input name="password" required minlength="8"></label>
+    <label>Role<select name="role"><option value="client">Client</option><option value="admin">Admin</option></select></label>
+  </div>
+  <button class="btn btn-accent btn-sm">Create user</button>
+</form>
+<div class="panel">
+  <table class="table">
+    <thead><tr><th>User</th><th>Joined</th><th>Courses</th><th>Role</th><th></th></tr></thead>
+    <tbody>
+      <% users.forEach(function (u) { %>
+        <tr>
+          <td><strong><%= u.name %></strong><br><span class="small muted"><%= u.email %><% if (u.phone) { %> · <%= u.phone %><% } %></span></td>
+          <td><%= h.formatDate(u.createdAt) %></td>
+          <td><%= u.courses %></td>
+          <td>
+            <form method="post" action="/admin/users/<%= u.id %>/role" class="inline-form">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <select name="role" data-autosubmit <%= u.id === currentUser.id ? 'disabled' : '' %>><option value="client" <%= u.role === 'client' ? 'selected' : '' %>>Client</option><option value="admin" <%= u.role === 'admin' ? 'selected' : '' %>>Admin</option></select>
+            </form>
+          </td>
+          <td class="actions">
+            <details class="menu-details">
+              <summary class="btn btn-ghost btn-xs">Manage</summary>
+              <div class="menu-pop">
+                <form method="post" action="/admin/enrollments"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="userId" value="<%= u.id %>">
+                  <label class="small">Give course access<select name="courseId"><% courses.forEach(function (c) { %><option value="<%= c.id %>"><%= c.title %></option><% }) %></select></label>
+                  <button class="btn btn-accent btn-xs">Grant access</button>
+                </form>
+                <form method="post" action="/admin/users/<%= u.id %>/password"><input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <label class="small">New password<input name="password" minlength="8" required></label>
+                  <button class="btn btn-primary btn-xs">Reset password</button>
+                </form>
+                <% if (u.id !== currentUser.id) { %>
+                <form method="post" action="/admin/users/<%= u.id %>/delete"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="btn btn-danger btn-xs" data-confirm="Delete <%= u.email %> and their enrolments?">Delete user</button></form>
+                <% } %>
+              </div>
+            </details>
+          </td>
+        </tr>
+      <% }) %>
+      <% if (!users.length) { %><tr><td colspan="5" class="muted">No users found.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+<%- include('_bottom') %>

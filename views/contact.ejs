@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { eyebrow: 'Contact', heading: content.contact_title, sub: content.contact_subtitle }) %>
+<section class="section">
+  <div class="container contact-grid">
+    <form method="post" action="/contact" class="card form-card">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="form-row">
+        <label>Full name<input name="name" required maxlength="120" value="<%= form.name || (currentUser ? currentUser.name : '') %>"></label>
+        <label>Email<input type="email" name="email" required value="<%= form.email || (currentUser ? currentUser.email : '') %>"></label>
+      </div>
+      <div class="form-row">
+        <label>Phone <span class="opt">(optional)</span><input name="phone" value="<%= form.phone || '' %>"></label>
+        <label>Subject<select name="subject">
+          <% ['Course enquiry', 'Research enquiry', 'Corporate / group training', 'Other'].forEach(function (s) { %>
+            <option <%= form.subject === s ? 'selected' : '' %>><%= s %></option>
+          <% }) %>
+        </select></label>
+      </div>
+      <label>Message<textarea name="message" rows="6" required maxlength="5000"><%= form.message || '' %></textarea></label>
+      <button class="btn btn-primary btn-lg">Send message</button>
+    </form>
+    <aside class="contact-info">
+      <% if (site.contact.email) { %><div class="info-item"><span>Email</span><a href="mailto:<%= site.contact.email %>"><%= site.contact.email %></a></div><% } %>
+      <% if (site.contact.phone) { %><div class="info-item"><span>Phone</span><a href="tel:<%= site.contact.phone.replace(/\s/g, '') %>"><%= site.contact.phone %></a></div><% } %>
+      <% if (site.contact.whatsapp) { %><div class="info-item"><span>WhatsApp</span><a href="https://wa.me/<%= site.contact.whatsapp.replace(/[^0-9]/g, '') %>" target="_blank" rel="noopener"><%= site.contact.whatsapp %></a></div><% } %>
+      <% if (site.contact.address) { %><div class="info-item"><span>Location</span><p><%= site.contact.address %></p></div><% } %>
+      <% if (site.contact.hours) { %><div class="info-item"><span>Hours</span><p><%= site.contact.hours %></p></div><% } %>
+    </aside>
+  </div>
+</section>
+<%- include('partials/footer') %>

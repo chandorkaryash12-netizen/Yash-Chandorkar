@@ -1,0 +1,35 @@
+<%- include('../partials/top') %>
+<div class="auth-page">
+  <div class="auth-side">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <a href="/" class="brand brand-light"><img src="<%= site.logo %>" alt="" width="48" height="48"><span class="brand-text"><strong><%= site.siteName %></strong><small><%= site.tagline %></small></span></a>
+    <div class="auth-side-copy">
+      <h2>Start thinking like an analyst.</h2>
+      <ul class="checks checks-light">
+        <li>Enrol in Vector courses</li>
+        <li>Free access to members-only research</li>
+        <li>Course materials and recordings in one dashboard</li>
+      </ul>
+    </div>
+  </div>
+  <div class="auth-main">
+    <form method="post" action="/signup" class="auth-card">
+      <%- include('../partials/flash') %>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <span class="eyebrow">Free account</span>
+      <h1>Create your account</h1>
+      <label>Full name<input name="name" required maxlength="120" autocomplete="name" value="<%= form.name || '' %>"></label>
+      <label>Email<input type="email" name="email" required autocomplete="email" value="<%= form.email || '' %>"></label>
+      <label>Phone <span class="opt">(optional)</span><input name="phone" autocomplete="tel" value="<%= form.phone || '' %>"></label>
+      <div class="form-row">
+        <label>Password<span class="pw"><input type="password" name="password" required minlength="8" autocomplete="new-password"><button type="button" class="pw-toggle" data-pw-toggle>Show</button></span></label>
+        <label>Confirm password<input type="password" name="confirm" required minlength="8" autocomplete="new-password"></label>
+      </div>
+      <label class="check"><input type="checkbox" name="terms" value="1" required> I understand Vector provides education and research, not investment advice. <a href="/disclaimer" target="_blank">Read disclaimer</a></label>
+      <button class="btn btn-primary btn-block btn-lg">Create account</button>
+      <p class="small center">Already have an account? <a href="/login">Log in</a></p>
+    </form>
+  </div>
+</div>
+<script src="/js/main.js" defer></script>
+</body></html>

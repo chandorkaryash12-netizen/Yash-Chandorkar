@@ -1,0 +1,40 @@
+<%- include('_top') %>
+<div class="toolbar">
+  <div class="filters">
+    <% [['', 'All'], ['pending', 'Pending'], ['active', 'Active'], ['rejected', 'Rejected']].forEach(function (s) { %>
+      <a href="/admin/enrollments<%= s[0] ? '?status=' + s[0] : '' %>" class="pill <%= status === s[0] ? 'active' : '' %>"><%= s[1] %></a>
+    <% }) %>
+  </div>
+  <button class="btn btn-accent" data-open="manual">+ Enrol a client</button>
+</div>
+<form method="post" action="/admin/enrollments" class="panel hidden" id="manual">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <div class="form-row">
+    <label>Client<select name="userId"><% clients.forEach(function (u) { %><option value="<%= u.id %>"><%= u.name %> — <%= u.email %></option><% }) %></select></label>
+    <label>Course<select name="courseId"><% courses.forEach(function (c) { %><option value="<%= c.id %>"><%= c.title %></option><% }) %></select></label>
+  </div>
+  <button class="btn btn-accent btn-sm">Grant access</button>
+</form>
+<p class="intro">When a client clicks <em>Enrol</em>, a <strong>pending</strong> request appears here. Collect payment, then <strong>Approve</strong> to unlock the course in their dashboard.</p>
+<div class="panel">
+  <table class="table">
+    <thead><tr><th>Client</th><th>Course</th><th>Requested</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+      <% enrollments.forEach(function (e) { %>
+        <tr>
+          <td><strong><%= e.user.name %></strong><br><span class="small muted"><%= e.user.email %><% if (e.user.phone) { %> · <%= e.user.phone %><% } %></span></td>
+          <td><%= e.course.title %><br><span class="small muted"><%= h.formatINR(e.course.price) %></span></td>
+          <td><%= h.formatDate(e.createdAt) %></td>
+          <td><span class="status status-<%= e.status %>"><%= e.status %></span></td>
+          <td class="actions">
+            <% if (e.status !== 'active') { %><form method="post" action="/admin/enrollments/<%= e.id %>/status"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="status" value="active"><button class="btn btn-accent btn-xs">Approve</button></form><% } %>
+            <% if (e.status !== 'rejected') { %><form method="post" action="/admin/enrollments/<%= e.id %>/status"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="status" value="rejected"><button class="btn btn-ghost btn-xs"><%= e.status === 'active' ? 'Revoke' : 'Reject' %></button></form><% } %>
+            <form method="post" action="/admin/enrollments/<%= e.id %>/delete"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="icon-btn" title="Remove" data-confirm="Remove this enrolment record?">×</button></form>
+          </td>
+        </tr>
+      <% }) %>
+      <% if (!enrollments.length) { %><tr><td colspan="5" class="muted">No enrolments<%= status ? ' with status ' + status : '' %>.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+<%- include('_bottom') %>

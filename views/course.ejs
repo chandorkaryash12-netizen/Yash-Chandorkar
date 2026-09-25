@@ -1,0 +1,101 @@
+<%- include('partials/header') %>
+<section class="page-hero course-hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="container course-hero-grid">
+    <div>
+      <a href="/courses" class="back-link">← All courses</a>
+      <span class="eyebrow eyebrow-light"><%= course.category %></span>
+      <h1><%= course.title %></h1>
+      <p class="lead"><%= course.subtitle %></p>
+      <ul class="hero-meta">
+        <% if (course.level) { %><li><span>Level</span><%= course.level %></li><% } %>
+        <% if (course.duration) { %><li><span>Duration</span><%= course.duration %></li><% } %>
+        <% if (course.format) { %><li><span>Format</span><%= course.format %></li><% } %>
+      </ul>
+      <% if (!course.published) { %><p class="chip chip-warn">Draft — only admins can see this page</p><% } %>
+    </div>
+    <aside class="enrol-card">
+      <% if (course.image) { %><img src="<%= course.image %>" alt="" class="enrol-img"><% } %>
+      <div class="enrol-body">
+        <div class="price price-lg">
+          <strong><%= h.formatINR(course.price) %></strong>
+          <% if (course.originalPrice && course.originalPrice > course.price) { %>
+            <s><%= h.formatINR(course.originalPrice) %></s>
+            <span class="save">Save <%= Math.round((1 - course.price / course.originalPrice) * 100) %>%</span>
+          <% } %>
+        </div>
+        <% if (course.schedule) { %><p class="small"><strong>Schedule:</strong> <%= course.schedule %></p><% } %>
+        <% if (enrollment && enrollment.status === 'active') { %>
+          <a href="/dashboard/courses/<%= course.slug %>" class="btn btn-accent btn-block btn-lg">Open course</a>
+        <% } else if (enrollment && enrollment.status === 'pending') { %>
+          <div class="notice">Your enrolment is pending confirmation. We will contact you with payment details.</div>
+          <a href="/dashboard" class="btn btn-ghost btn-block">Go to dashboard</a>
+        <% } else if (currentUser) { %>
+          <form method="post" action="/dashboard/enroll/<%= course.id %>">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button class="btn btn-accent btn-block btn-lg">Enrol now</button>
+          </form>
+        <% } else { %>
+          <a href="/signup" class="btn btn-accent btn-block btn-lg">Sign up to enrol</a>
+          <p class="small center">Already have an account? <a href="/login">Log in</a></p>
+        <% } %>
+        <% if (course.highlights && course.highlights.length) { %>
+          <ul class="checks small">
+            <% course.highlights.slice(0, 4).forEach(function (x) { %><li><%= x %></li><% }) %>
+          </ul>
+        <% } %>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container course-layout">
+    <div class="course-main">
+      <div class="prose"><%- h.formatText(course.description) %></div>
+
+      <% if (course.highlights && course.highlights.length) { %>
+        <h2 class="block-title">What's included</h2>
+        <ul class="checks grid-2"><% course.highlights.forEach(function (x) { %><li><%= x %></li><% }) %></ul>
+      <% } %>
+
+      <% if (course.modules && course.modules.length) { %>
+        <h2 class="block-title">Curriculum <span class="muted">· <%= course.modules.length %> modules</span></h2>
+        <div class="curriculum">
+          <% course.modules.forEach(function (m, i) { %>
+            <details <%= i === 0 ? 'open' : '' %>>
+              <summary><span class="mod-num">Module <%= i + 1 %></span><span class="mod-title"><%= m.title %></span></summary>
+              <div class="mod-body">
+                <% if (m.summary) { %><p><%= m.summary %></p><% } %>
+                <% if (m.topics && m.topics.length) { %><ul><% m.topics.forEach(function (t) { %><li><%= t %></li><% }) %></ul><% } %>
+              </div>
+            </details>
+          <% }) %>
+        </div>
+      <% } %>
+    </div>
+    <aside class="course-side">
+      <% if (course.outcomes && course.outcomes.length) { %>
+        <div class="side-card">
+          <h3>By the end you will</h3>
+          <ul class="checks"><% course.outcomes.forEach(function (x) { %><li><%= x %></li><% }) %></ul>
+        </div>
+      <% } %>
+      <div class="side-card side-card-dark">
+        <h3>Questions?</h3>
+        <p>Talk to us about cohort dates, prerequisites or group enrolments.</p>
+        <a href="/contact" class="btn btn-accent btn-sm">Contact us</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<% if (faqs.length) { %>
+<section class="section section-tint">
+  <div class="container narrow">
+    <div class="section-head"><h2><%= content.faq_title %></h2></div>
+    <%- include('partials/faq', { faqs: faqs }) %>
+  </div>
+</section>
+<% } %>
+<%- include('partials/footer') %>

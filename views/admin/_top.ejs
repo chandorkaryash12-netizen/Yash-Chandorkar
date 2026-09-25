@@ -1,0 +1,32 @@
+<%- include('../partials/top') %>
+<div class="admin">
+  <aside class="admin-side" data-admin-side>
+    <a href="/admin" class="brand brand-light"><img src="<%= site.logo %>" alt="" width="40" height="40"><span class="brand-text"><strong><%= site.siteName %></strong><small>Admin</small></span></a>
+    <nav>
+      <% var links = [
+        ['Overview', [['/admin', 'Dashboard']]],
+        ['Website', [['/admin/content', 'Site content'], ['/admin/lists', 'Sections & lists'], ['/admin/media', 'Media library'], ['/admin/theme', 'Theme & format'], ['/admin/settings', 'Settings']]],
+        ['Products', [['/admin/courses', 'Courses'], ['/admin/research', 'Research']]],
+        ['People', [['/admin/enrollments', 'Enrolments', badge.enrollments], ['/admin/users', 'Users'], ['/admin/messages', 'Messages', badge.messages]]],
+        ['Account', [['/admin/account', 'My account']]]
+      ]; %>
+      <% links.forEach(function (g) { %>
+        <span class="side-group"><%= g[0] %></span>
+        <% g[1].forEach(function (l) { var active = l[0] === '/admin' ? (path === '/admin' || path === '/admin/') : path.startsWith(l[0]); %>
+          <a href="<%= l[0] %>" class="<%= active ? 'active' : '' %>"><%= l[1] %><% if (l[2]) { %><span class="badge"><%= l[2] %></span><% } %></a>
+        <% }) %>
+      <% }) %>
+    </nav>
+    <div class="side-foot">
+      <a href="/" target="_blank">View website ↗</a>
+      <form method="post" action="/logout"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="link-btn">Log out</button></form>
+    </div>
+  </aside>
+  <div class="admin-main">
+    <header class="admin-bar">
+      <button class="nav-toggle admin-toggle" data-admin-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+      <h1><%= title %></h1>
+      <span class="admin-user"><%= currentUser.name %></span>
+    </header>
+    <div class="admin-content">
+      <%- include('../partials/flash') %>

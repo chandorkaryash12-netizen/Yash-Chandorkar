@@ -1,0 +1,13 @@
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2><%= content.cta_title %></h2>
+      <p><%= content.cta_subtitle %></p>
+    </div>
+    <% if (currentUser) { %>
+      <a href="/dashboard" class="btn btn-primary btn-lg">Go to my dashboard</a>
+    <% } else { %>
+      <a href="/signup" class="btn btn-primary btn-lg"><%= content.cta_button %></a>
+    <% } %>
+  </div>
+</section>

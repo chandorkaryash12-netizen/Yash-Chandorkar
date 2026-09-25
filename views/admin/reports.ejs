@@ -1,0 +1,20 @@
+<%- include('_top') %>
+<div class="toolbar"><p class="intro">Publish sector notes, company reports and concall summaries. Mark a report <em>Members</em> to require a free login to read the full text.</p><a href="/admin/research/new" class="btn btn-accent">+ New report</a></div>
+<div class="panel">
+  <table class="table">
+    <thead><tr><th>Report</th><th>Date</th><th>Access</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+      <% reports.forEach(function (r) { %>
+        <tr>
+          <td><a href="/admin/research/<%= r.id %>"><strong><%= r.title %></strong></a><br><span class="small muted"><%= r.sector %> · <%= r.rating %></span></td>
+          <td><%= h.formatDate(r.date) %></td>
+          <td><%= r.access === 'members' ? 'Members' : 'Public' %></td>
+          <td><span class="status status-<%= r.published ? 'active' : 'pending' %>"><%= r.published ? 'Published' : 'Draft' %></span></td>
+          <td class="actions"><a href="/research/<%= r.slug %>" target="_blank" class="btn btn-ghost btn-xs">View</a><a href="/admin/research/<%= r.id %>" class="btn btn-primary btn-xs">Edit</a></td>
+        </tr>
+      <% }) %>
+      <% if (!reports.length) { %><tr><td colspan="5" class="muted">No reports yet.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+<%- include('_bottom') %>

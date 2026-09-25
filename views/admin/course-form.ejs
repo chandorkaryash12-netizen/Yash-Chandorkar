@@ -1,0 +1,67 @@
+<%- include('_top') %>
+<div class="toolbar"><a href="/admin/courses" class="back-link-dark">← All courses</a><% if (!isNew) { %><a href="/courses/<%= course.slug %>" target="_blank" class="btn btn-ghost btn-sm">View on site ↗</a><% } %></div>
+<form method="post" action="/admin/courses/<%= isNew ? 'new' : course.id %>" enctype="multipart/form-data" class="admin-form">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <div class="admin-cols admin-cols-main">
+    <div>
+      <section class="panel">
+        <div class="panel-head"><h2>Basics</h2></div>
+        <label>Title<input name="title" required value="<%= course.title || '' %>"></label>
+        <label>Subtitle<input name="subtitle" value="<%= course.subtitle || '' %>"></label>
+        <div class="form-row">
+          <label>Category<input name="category" value="<%= course.category || '' %>" placeholder="Core Programme / Sector Expertise"></label>
+          <label>Level<input name="level" value="<%= course.level || '' %>"></label>
+        </div>
+        <label>Card summary (1–2 sentences)<textarea name="summary" rows="3"><%= course.summary || '' %></textarea></label>
+        <label>Full description <span class="opt">(## headings, - bullets, **bold**)</span><textarea name="description" rows="10"><%= course.description || '' %></textarea></label>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><div><h2>Curriculum</h2><p class="small muted">Start each module with <code>## Module title</code>, then a one-line summary, then topics as <code>- bullets</code>. Leave a blank line between modules.</p></div></div>
+        <textarea name="modulesText" rows="22" class="mono"><%= course.modulesText %></textarea>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>What's included & outcomes</h2></div>
+        <div class="form-row">
+          <label>Highlights (one per line)<textarea name="highlightsText" rows="8"><%= course.highlightsText %></textarea></label>
+          <label>Learning outcomes (one per line)<textarea name="outcomesText" rows="8"><%= course.outcomesText %></textarea></label>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><div><h2>Materials for enrolled students</h2><p class="small muted">Only visible to students with active access. One per line: <code>Title | https://link</code> (Zoom link, Drive folder, recording, PDF…).</p></div></div>
+        <textarea name="materialsText" rows="6" class="mono" placeholder="Session 1 recording | https://drive.google.com/...&#10;Report template | https://docs.google.com/..."><%= course.materialsText %></textarea>
+      </section>
+    </div>
+    <div>
+      <section class="panel">
+        <div class="panel-head"><h2>Publish</h2></div>
+        <label class="toggle"><input type="checkbox" name="published" value="1" <%= course.published ? 'checked' : '' %>><span></span>Published (visible on site)</label>
+        <label class="toggle"><input type="checkbox" name="featured" value="1" <%= course.featured ? 'checked' : '' %>><span></span>Featured</label>
+        <label>URL slug<input name="slug" value="<%= course.slug || '' %>" placeholder="auto from title"></label>
+        <button class="btn btn-accent btn-block">Save course</button>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Pricing</h2></div>
+        <label>Price (₹, 0 = free)<input type="number" min="0" step="1" name="price" value="<%= course.price || 0 %>"></label>
+        <label>Original price (₹, shown struck-through)<input type="number" min="0" step="1" name="originalPrice" value="<%= course.originalPrice || 0 %>"></label>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Details</h2></div>
+        <label>Duration<input name="duration" value="<%= course.duration || '' %>"></label>
+        <label>Schedule<textarea name="schedule" rows="2"><%= course.schedule || '' %></textarea></label>
+        <label>Format<input name="format" value="<%= course.format || '' %>"></label>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Cover image</h2></div>
+        <%- include('_image-field', { name: 'image', label: 'Shown on cards and the course page', value: course.image || '' }) %>
+      </section>
+    </div>
+  </div>
+</form>
+<% if (!isNew) { %>
+  <form method="post" action="/admin/courses/<%= course.id %>/delete" class="danger-zone">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div><strong>Delete this course</strong><p class="small muted">Also removes its enrolments. This cannot be undone.</p></div>
+    <button class="btn btn-danger btn-sm" data-confirm="Delete this course and all its enrolments?">Delete course</button>
+  </form>
+<% } %>
+<%- include('_bottom') %>

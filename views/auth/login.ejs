@@ -1,0 +1,35 @@
+<%- include('../partials/top') %>
+<div class="auth-page <%= mode === 'admin' ? 'auth-admin' : '' %>">
+  <div class="auth-side">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <a href="/" class="brand brand-light"><img src="<%= site.logo %>" alt="" width="48" height="48"><span class="brand-text"><strong><%= site.siteName %></strong><small><%= site.tagline %></small></span></a>
+    <div class="auth-side-copy">
+      <% if (mode === 'admin') { %>
+        <h2>Admin console</h2>
+        <p>Manage courses, research, clients, enrolments and every word and image on the site.</p>
+      <% } else { %>
+        <h2>Welcome back.</h2>
+        <p>Continue your courses, read members-only research and track your enrolments.</p>
+      <% } %>
+    </div>
+  </div>
+  <div class="auth-main">
+    <form method="post" class="auth-card" action="<%= mode === 'admin' ? '/admin/login' : '/login' %>">
+      <%- include('../partials/flash') %>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <span class="eyebrow"><%= mode === 'admin' ? 'Administrator' : 'Client login' %></span>
+      <h1><%= mode === 'admin' ? 'Admin sign in' : 'Log in to your account' %></h1>
+      <label>Email<input type="email" name="email" required autocomplete="email" value="<%= email %>" autofocus></label>
+      <label>Password<span class="pw"><input type="password" name="password" required autocomplete="current-password"><button type="button" class="pw-toggle" data-pw-toggle>Show</button></span></label>
+      <button class="btn btn-primary btn-block btn-lg">Log in</button>
+      <% if (mode === 'admin') { %>
+        <p class="small center">Not an admin? <a href="/login">Client login</a></p>
+      <% } else { %>
+        <p class="small center">New to <%= site.siteName %>? <a href="/signup">Create an account</a></p>
+        <p class="small center muted">Forgot your password? <a href="/contact">Contact us</a> and we will reset it.</p>
+      <% } %>
+    </form>
+  </div>
+</div>
+<script src="/js/main.js" defer></script>
+</body></html>

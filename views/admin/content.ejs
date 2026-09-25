@@ -1,0 +1,24 @@
+<%- include('_top') %>
+<p class="intro">Edit every heading, paragraph and image on the public website. Changes go live as soon as you save. Long text fields support simple formatting: <code>## Heading</code>, <code>- bullet</code>, <code>**bold**</code>, <code>*italic*</code> and <code>[link text](https://…)</code>.</p>
+<form method="post" action="/admin/content" enctype="multipart/form-data" class="admin-form">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <div class="jump">
+    <% schema.forEach(function (g, i) { %><a href="#g<%= i %>"><%= g.group %></a><% }) %>
+  </div>
+  <% schema.forEach(function (g, i) { %>
+    <section class="panel" id="g<%= i %>">
+      <div class="panel-head"><h2><%= g.group %></h2></div>
+      <% g.fields.forEach(function (f) { %>
+        <% if (f.type === 'image') { %>
+          <%- include('_image-field', { name: f.key, label: f.label, value: content[f.key] || '' }) %>
+        <% } else if (f.type === 'textarea') { %>
+          <label><%= f.label %><textarea name="<%= f.key %>" rows="<%= f.rows || 3 %>"><%= content[f.key] %></textarea></label>
+        <% } else { %>
+          <label><%= f.label %><input name="<%= f.key %>" value="<%= content[f.key] %>"></label>
+        <% } %>
+      <% }) %>
+    </section>
+  <% }) %>
+  <div class="save-bar"><button class="btn btn-accent btn-lg">Save all content</button><a href="/" target="_blank" class="btn btn-ghost">Preview site ↗</a></div>
+</form>
+<%- include('_bottom') %>

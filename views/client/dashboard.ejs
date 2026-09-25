@@ -1,0 +1,64 @@
+<%- include('../partials/header') %>
+<section class="dash-hero">
+  <div class="container">
+    <span class="eyebrow eyebrow-light">My dashboard</span>
+    <h1>Hello, <%= currentUser.name.split(' ')[0] %>.</h1>
+    <p class="lead">Your courses, enrolment status and the latest research — all in one place.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container dash-grid">
+    <div>
+      <h2 class="block-title">My courses</h2>
+      <% if (!enrollments.length) { %>
+        <div class="card empty-card">
+          <p>You have not enrolled in a course yet.</p>
+          <a href="/courses" class="btn btn-primary">Browse courses</a>
+        </div>
+      <% } %>
+      <div class="my-courses">
+        <% enrollments.forEach(function (e) { %>
+          <div class="my-course card">
+            <% if (e.course.image) { %><img src="<%= e.course.image %>" alt=""><% } %>
+            <div class="my-course-body">
+              <span class="status status-<%= e.status %>"><%= e.status === 'active' ? 'Active' : e.status === 'pending' ? 'Awaiting payment confirmation' : 'Not approved' %></span>
+              <h3><%= e.course.title %></h3>
+              <p class="small muted"><%= e.course.duration %></p>
+              <% if (e.status === 'active') { %>
+                <a href="/dashboard/courses/<%= e.course.slug %>" class="btn btn-accent btn-sm">Open course →</a>
+              <% } else if (e.status === 'pending') { %>
+                <p class="small"><%= site.paymentInstructions %></p>
+              <% } else { %>
+                <form method="post" action="/dashboard/enroll/<%= e.course.id %>"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="btn btn-ghost btn-sm">Request again</button></form>
+              <% } %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+
+      <% if (available.length) { %>
+        <h2 class="block-title">Explore more</h2>
+        <div class="course-grid course-grid-2"><% available.forEach(function (c) { %><%- include('../partials/course-card', { c: c }) %><% }) %></div>
+      <% } %>
+    </div>
+    <aside>
+      <div class="side-card">
+        <h3>My profile</h3>
+        <p class="small"><strong><%= currentUser.name %></strong><br><%= currentUser.email %><% if (currentUser.phone) { %><br><%= currentUser.phone %><% } %></p>
+        <a href="/dashboard/profile" class="btn btn-ghost btn-sm">Edit profile & password</a>
+      </div>
+      <div class="side-card">
+        <h3>Latest research</h3>
+        <ul class="plain-list">
+          <% reports.forEach(function (r) { %><li><a href="/research/<%= r.slug %>"><%= r.title %></a><span class="small muted"><%= h.formatDate(r.date) %></span></li><% }) %>
+        </ul>
+      </div>
+      <div class="side-card side-card-dark">
+        <h3>Need help?</h3>
+        <p>Questions about payment or access?</p>
+        <a href="/contact" class="btn btn-accent btn-sm">Contact us</a>
+      </div>
+    </aside>
+  </div>
+</section>
+<%- include('../partials/footer') %>

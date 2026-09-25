@@ -1,0 +1,22 @@
+<article class="course-card">
+  <a href="/courses/<%= c.slug %>" class="course-media">
+    <% if (c.image) { %><img src="<%= c.image %>" alt="<%= c.title %>" loading="lazy"><% } %>
+    <span class="chip chip-accent"><%= c.category %></span>
+  </a>
+  <div class="course-body">
+    <h3><a href="/courses/<%= c.slug %>"><%= c.title %></a></h3>
+    <p><%= c.summary %></p>
+    <ul class="meta">
+      <% if (c.level) { %><li><%= c.level %></li><% } %>
+      <% if (c.modules && c.modules.length) { %><li><%= c.modules.length %> modules</li><% } %>
+      <% if (c.duration) { %><li><%= c.duration %></li><% } %>
+    </ul>
+    <div class="course-foot">
+      <div class="price">
+        <strong><%= h.formatINR(c.price) %></strong>
+        <% if (c.originalPrice && c.originalPrice > c.price) { %><s><%= h.formatINR(c.originalPrice) %></s><% } %>
+      </div>
+      <a href="/courses/<%= c.slug %>" class="btn btn-primary btn-sm">View course</a>
+    </div>
+  </div>
+</article>

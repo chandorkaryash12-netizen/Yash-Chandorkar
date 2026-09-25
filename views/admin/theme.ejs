@@ -1,0 +1,30 @@
+<%- include('_top') %>
+<form method="post" action="/admin/theme" class="admin-form theme-form">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <div class="admin-cols">
+    <section class="panel">
+      <div class="panel-head"><h2>Colours</h2></div>
+      <% [['primary', 'Primary (headers, buttons, footer)'], ['accent', 'Accent (highlights, call-to-action)'], ['background', 'Page background'], ['text', 'Body text']].forEach(function (c) { %>
+        <label class="color-field"><span><%= c[1] %></span><span class="color-inputs"><input type="color" name="<%= c[0] %>" value="<%= site.theme[c[0]] %>" data-theme-var="<%= c[0] %>"><code><%= site.theme[c[0]] %></code></span></label>
+      <% }) %>
+      <p class="small muted">Vector brand: primary <code>#03221c</code>, accent <code>#fdc107</code>.</p>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><h2>Typography & shape</h2></div>
+      <label>Heading font<select name="headingFont"><% fonts.heading.forEach(function (f) { %><option <%= site.theme.headingFont === f ? 'selected' : '' %>><%= f %></option><% }) %></select></label>
+      <label>Body font<select name="bodyFont"><% fonts.body.forEach(function (f) { %><option <%= site.theme.bodyFont === f ? 'selected' : '' %>><%= f %></option><% }) %></select></label>
+      <label>Corner roundness: <output data-radius-out><%= site.theme.radius %></output>px<input type="range" name="radius" min="0" max="28" value="<%= site.theme.radius %>" data-radius></label>
+      <div class="theme-preview" data-theme-preview>
+        <span class="eyebrow">Preview</span>
+        <h3>Research with direction.</h3>
+        <p>Body text looks like this.</p>
+        <span class="btn btn-accent btn-sm">Accent button</span> <span class="btn btn-primary btn-sm">Primary button</span>
+      </div>
+    </section>
+  </div>
+  <div class="save-bar">
+    <button class="btn btn-accent btn-lg">Save theme</button>
+    <button name="reset" value="1" class="btn btn-ghost" data-confirm="Reset colours and fonts to the Vector defaults?">Reset to defaults</button>
+  </div>
+</form>
+<%- include('_bottom') %>

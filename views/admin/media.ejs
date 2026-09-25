@@ -1,0 +1,23 @@
+<%- include('_top') %>
+<form method="post" action="/admin/media" enctype="multipart/form-data" class="panel upload-panel">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <div><h2>Upload images</h2><p class="small muted">JPG, PNG, WEBP or GIF up to 8 MB each. Copy an image's URL and paste it into any image field on the site.</p></div>
+  <input type="file" name="files" accept="image/*" multiple required>
+  <button class="btn btn-accent">Upload</button>
+</form>
+<div class="media-grid">
+  <% media.forEach(function (m) { %>
+    <figure class="media-item">
+      <a href="<%= m.url %>" target="_blank"><img src="<%= m.url %>" alt="<%= m.name %>" loading="lazy"></a>
+      <figcaption>
+        <span class="small" title="<%= m.name %>"><%= m.name %></span>
+        <div class="media-actions">
+          <button type="button" class="btn btn-ghost btn-xs" data-copy="<%= m.url %>">Copy URL</button>
+          <form method="post" action="/admin/media/<%= m.id %>/delete"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="btn btn-danger btn-xs" data-confirm="Delete this image?">Delete</button></form>
+        </div>
+      </figcaption>
+    </figure>
+  <% }) %>
+</div>
+<% if (!media.length) { %><p class="muted">No images uploaded yet. Images you upload on other admin pages also appear here.</p><% } %>
+<%- include('_bottom') %>

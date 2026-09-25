@@ -1,0 +1,51 @@
+<%- include('_top') %>
+<form method="post" action="/admin/settings" enctype="multipart/form-data" class="admin-form">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <section class="panel">
+    <div class="panel-head"><h2>Brand</h2></div>
+    <div class="form-row">
+      <label>Site name<input name="siteName" value="<%= site.siteName %>" required></label>
+      <label>Tagline<input name="tagline" value="<%= site.tagline %>"></label>
+    </div>
+    <div class="form-row">
+      <%- include('_image-field', { name: 'logo', label: 'Logo (square works best)', value: site.logo }) %>
+      <%- include('_image-field', { name: 'favicon', label: 'Browser tab icon', value: site.favicon }) %>
+    </div>
+    <label>SEO description (shown in Google results)<textarea name="seoDescription" rows="2"><%= site.seoDescription %></textarea></label>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Contact details</h2></div>
+    <div class="form-row">
+      <label>Email<input name="contact_email" value="<%= site.contact.email %>"></label>
+      <label>Phone<input name="contact_phone" value="<%= site.contact.phone %>"></label>
+    </div>
+    <div class="form-row">
+      <label>WhatsApp number (with country code — shows a chat button)<input name="contact_whatsapp" value="<%= site.contact.whatsapp %>" placeholder="+91 98xxxxxxxx"></label>
+      <label>Hours<input name="contact_hours" value="<%= site.contact.hours %>"></label>
+    </div>
+    <label>Address<input name="contact_address" value="<%= site.contact.address %>"></label>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Social links</h2></div>
+    <div class="form-row form-row-3">
+      <% ['linkedin', 'instagram', 'youtube', 'twitter', 'telegram'].forEach(function (k) { %>
+        <label><%= k === 'twitter' ? 'X / Twitter' : k.charAt(0).toUpperCase() + k.slice(1) %><input name="social_<%= k %>" value="<%= site.social[k] %>" placeholder="https://…"></label>
+      <% }) %>
+    </div>
+  </section>
+  <section class="panel" id="sections">
+    <div class="panel-head"><h2>Home page sections</h2><p class="small muted">Untick to hide a section.</p></div>
+    <div class="toggles">
+      <% Object.keys(site.sections).forEach(function (k) { %>
+        <label class="toggle"><input type="checkbox" name="section_<%= k %>" value="1" <%= site.sections[k] ? 'checked' : '' %>><span></span><%= { hero: 'Hero banner', stats: 'Highlight numbers', courses: 'Courses', approach: 'Method steps', research: 'Latest research', testimonials: 'Testimonials', faq: 'FAQ', cta: 'Call to action' }[k] || k %></label>
+      <% }) %>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Messages & legal</h2></div>
+    <label>Message shown to a client after they request enrolment<textarea name="paymentInstructions" rows="3"><%= site.paymentInstructions %></textarea></label>
+    <label>Disclaimer (footer, research pages and /disclaimer)<textarea name="disclaimer" rows="5"><%= site.disclaimer %></textarea></label>
+  </section>
+  <div class="save-bar"><button class="btn btn-accent btn-lg">Save settings</button></div>
+</form>
+<%- include('_bottom') %>

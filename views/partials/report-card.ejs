@@ -1,0 +1,13 @@
+<article class="report-card">
+  <% if (r.image) { %><a href="/research/<%= r.slug %>" class="report-media"><img src="<%= r.image %>" alt="" loading="lazy"></a><% } %>
+  <div class="report-top">
+    <span class="chip"><%= r.sector %></span>
+    <% if (r.access === 'members') { %><span class="chip chip-lock" title="Free for registered members">Members</span><% } %>
+  </div>
+  <h3><a href="/research/<%= r.slug %>"><%= r.title %></a></h3>
+  <p><%= r.summary %></p>
+  <div class="report-foot">
+    <span><%= h.formatDate(r.date) %><% if (r.rating) { %> · <%= r.rating %><% } %></span>
+    <a href="/research/<%= r.slug %>" class="arrow-link">Read →</a>
+  </div>
+</article>

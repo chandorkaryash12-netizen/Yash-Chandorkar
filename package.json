@@ -1,0 +1,32 @@
+{
+  "name": "vector-equity-research",
+  "version": "1.0.0",
+  "description": "Vector — Equity Research website with courses, research, client & admin portals and a built-in CMS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandorkaryash12-netizen/Yash-Chandorkar.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/chandorkaryash12-netizen/Yash-Chandorkar/issues"
+  },
+  "homepage": "https://github.com/chandorkaryash12-netizen/Yash-Chandorkar#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-session": "^2.1.1",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "multer": "^2.4.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}

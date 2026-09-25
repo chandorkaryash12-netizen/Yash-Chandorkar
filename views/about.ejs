@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { eyebrow: content.about_eyebrow, heading: content.about_title, sub: '' }) %>
+<section class="section">
+  <div class="container about-grid">
+    <div class="prose"><%- h.formatText(content.about_body) %></div>
+    <div class="about-visual">
+      <% if (content.about_image) { %>
+        <img src="<%= content.about_image %>" alt="" class="rounded-img">
+      <% } else { %>
+        <div class="emblem-panel"><img src="<%= site.logo %>" alt="<%= site.siteName %> emblem"></div>
+      <% } %>
+      <div class="mission-card">
+        <h3><%= content.mission_title %></h3>
+        <p><%= content.mission_body %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="founder">
+      <div class="founder-photo">
+        <% if (content.founder_image) { %><img src="<%= content.founder_image %>" alt="<%= content.founder_name %>">
+        <% } else { %><span><%= (content.founder_name || 'V').split(' ').map(function (p) { return p[0]; }).join('').slice(0, 2) %></span><% } %>
+      </div>
+      <div>
+        <span class="eyebrow"><%= content.founder_role %></span>
+        <h2><%= content.founder_name %></h2>
+        <p><%= content.founder_bio %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if (approach.length) { %>
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><%= content.approach_eyebrow %></span>
+      <h2><%= content.approach_title %></h2>
+    </div>
+    <ol class="steps">
+      <% approach.forEach(function (s, i) { %>
+        <li class="step"><span class="step-num"><%= String(i + 1).padStart(2, '0') %></span><h3><%= s.title %></h3><p><%= s.body %></p></li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+<% } %>
+<%- include('partials/cta') %>
+<%- include('partials/footer') %>
