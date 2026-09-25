@@ -471,11 +471,8 @@ function buildSeed() {
       { title: 'Value it properly', body: 'DCF, EV/EBITDA, P/E: the right method for the right sector, with a margin of safety.' },
       { title: 'Write the thesis', body: 'A clear Buy / Hold / Sell call with drivers, risks and what would change our mind.' },
     ],
-    testimonials: [
-      { name: 'Aditi K.', role: 'MBA Finance student', quote: 'The annual report and concall sessions changed how I read companies. I finally have a process instead of a watchlist of tips.' },
-      { name: 'Rohan M.', role: 'CFA Level II candidate', quote: 'Writing a full report on PNG Jewellers gave me something concrete to show in interviews. The report template alone was worth it.' },
-      { name: 'Sneha P.', role: 'Retail investor', quote: 'The gold sector course explained why jewellery stocks move the way they do. Studded mix and SSSG are now the first things I check.' },
-    ],
+    // Add real learner quotes in Admin > Sections & lists; the home page hides the section while this list is empty.
+    testimonials: [],
     faqs: [
       { q: 'Do I need a finance background?', a: 'No. Road Map to Equity Research starts from stock-market foundations and builds up to valuation and report writing. Basic comfort with Excel helps.' },
       { q: 'Are the sessions live or recorded?', a: 'Sessions are live on weekends, and recordings are available in your dashboard so you can revise or catch up.' },
