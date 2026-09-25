@@ -24,11 +24,11 @@
       <span class="nav-sep"></span>
       <% if (currentUser) { %>
         <% if (currentUser.role === 'admin') { %><a href="/admin" class="btn btn-ghost btn-sm">Admin</a><% } %>
-        <a href="/dashboard" class="btn btn-accent btn-sm">My dashboard</a>
+        <a href="/dashboard" class="btn btn-primary btn-sm">My dashboard</a>
         <form method="post" action="/logout" class="inline"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="link-btn">Log out</button></form>
       <% } else { %>
         <a href="/login" class="nav-login">Log in</a>
-        <a href="/signup" class="btn btn-accent btn-sm">Sign up</a>
+        <a href="/signup" class="btn btn-primary btn-sm">Sign up</a>
       <% } %>
     </nav>
   </div>
