@@ -416,7 +416,7 @@ function buildSeed() {
         'Vector Equity Research: learn equity research the way analysts do. Road Map to Equity Research and Gold & Jewellery sector expertise courses, plus independent sector research.',
     },
     content: {
-      hero_eyebrow: 'Independent Equity Research & Analyst Training',
+      hero_eyebrow: '',
       hero_title: 'Research with direction. Invest with conviction.',
       hero_subtitle:
         'Vector teaches you to analyse businesses the way institutional analysts do (industry, financials, management and valuation) and publishes independent sector research you can actually use.',

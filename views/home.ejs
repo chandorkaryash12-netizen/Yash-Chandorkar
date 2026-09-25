@@ -5,7 +5,7 @@
   <div class="hero-grid-bg" aria-hidden="true"></div>
   <div class="container hero-inner">
     <div class="hero-copy">
-      <span class="eyebrow eyebrow-light"><%= content.hero_eyebrow %></span>
+      <% if (content.hero_eyebrow) { %><span class="eyebrow eyebrow-light"><%= content.hero_eyebrow %></span><% } %>
       <h1><%= content.hero_title %></h1>
       <p class="lead"><%= content.hero_subtitle %></p>
       <div class="hero-actions">
